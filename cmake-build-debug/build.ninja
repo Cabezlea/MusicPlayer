@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_untitled: phony || untitled_autogen unti
 build CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_untitled
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers -iframework /Users/user/Qt/6.7.0/macOS/lib -isystem /Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang -isystem /Users/user/Qt/6.7.0/macOS/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Headers -isystem /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir/untitled_autogen
@@ -62,7 +62,7 @@ build CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o: CXX_COMPI
 build CMakeFiles/untitled.dir/main.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/main.cpp || cmake_object_order_depends_target_untitled
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/untitled.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers -iframework /Users/user/Qt/6.7.0/macOS/lib -isystem /Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang -isystem /Users/user/Qt/6.7.0/macOS/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Headers -isystem /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
@@ -78,7 +78,7 @@ build CMakeFiles/untitled.dir/main.cpp.o: CXX_COMPILER__untitled_unscanned_Debug
 # Link the executable untitled
 
 build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o CMakeFiles/untitled.dir/main.cpp.o | /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Versions/A/QtWidgets /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Versions/A/QtGui /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Versions/A/QtCore || untitled_autogen untitled_autogen_timestamp_deps
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   LINK_LIBRARIES = -Wl,-rpath,/Users/user/Qt/6.7.0/macOS/lib  /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Versions/A/QtWidgets  /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Versions/A/QtGui  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration  -Xlinker -framework -Xlinker OpenGL  -Xlinker -framework -Xlinker AGL  -framework AppKit  -framework ImageIO  -framework Metal
   LINK_PATH = -iframework /Users/user/Qt/6.7.0/macOS/lib
   OBJECT_DIR = CMakeFiles/untitled.dir
