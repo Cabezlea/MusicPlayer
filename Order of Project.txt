@@ -17,4 +17,3 @@ Initially we will create different classes to handle different things:
 
 *Song - We will create this one later
 -The Song class could represent each track, including metadata like title, artist, album, and file path
-

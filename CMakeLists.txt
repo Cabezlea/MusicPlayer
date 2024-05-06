@@ -15,14 +15,14 @@ find_package(Qt6 COMPONENTS
         REQUIRED)
 
 add_executable(untitled main.cpp
-        cmake-build-debug/MainWindow.cpp
-        cmake-build-debug/MainWindow.h
-        cmake-build-debug/PlayerControls.cpp
-        cmake-build-debug/PlayerControls.h
-        cmake-build-debug/PlaylistManager.cpp
-        cmake-build-debug/PlaylistManager.h
-        cmake-build-debug/AudioPlayer.cpp
-        cmake-build-debug/AudioPlayer.h
+        MainWindow.cpp
+        MainWindow.h
+        PlayerControls.cpp
+        PlayerControls.h
+        PlaylistManager.cpp
+        PlaylistManager.h
+        AudioPlayer.cpp
+        AudioPlayer.h
 )
 target_link_libraries(untitled
         Qt::Core

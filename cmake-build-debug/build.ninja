@@ -65,7 +65,7 @@ build CMakeFiles/untitled.dir/main.cpp.o: CXX_COMPILER__untitled_unscanned_Debug
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
-build CMakeFiles/untitled.dir/MainWindow.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/MainWindow.cpp || cmake_object_order_depends_target_untitled
+build CMakeFiles/untitled.dir/MainWindow.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/MainWindow.cpp || cmake_object_order_depends_target_untitled
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/untitled.dir/MainWindow.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
@@ -73,7 +73,7 @@ build CMakeFiles/untitled.dir/MainWindow.cpp.o: CXX_COMPILER__untitled_unscanned
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
-build CMakeFiles/untitled.dir/PlayerControls.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/PlayerControls.cpp || cmake_object_order_depends_target_untitled
+build CMakeFiles/untitled.dir/PlayerControls.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlayerControls.cpp || cmake_object_order_depends_target_untitled
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/untitled.dir/PlayerControls.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
@@ -81,7 +81,7 @@ build CMakeFiles/untitled.dir/PlayerControls.cpp.o: CXX_COMPILER__untitled_unsca
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
-build CMakeFiles/untitled.dir/PlaylistManager.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/PlaylistManager.cpp || cmake_object_order_depends_target_untitled
+build CMakeFiles/untitled.dir/PlaylistManager.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlaylistManager.cpp || cmake_object_order_depends_target_untitled
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/untitled.dir/PlaylistManager.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
@@ -89,7 +89,7 @@ build CMakeFiles/untitled.dir/PlaylistManager.cpp.o: CXX_COMPILER__untitled_unsc
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
-build CMakeFiles/untitled.dir/AudioPlayer.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/AudioPlayer.cpp || cmake_object_order_depends_target_untitled
+build CMakeFiles/untitled.dir/AudioPlayer.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/AudioPlayer.cpp || cmake_object_order_depends_target_untitled
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/untitled.dir/AudioPlayer.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics

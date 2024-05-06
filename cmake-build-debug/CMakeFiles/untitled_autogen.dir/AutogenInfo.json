@@ -258,27 +258,27 @@
 	"HEADERS" : 
 	[
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/AudioPlayer.h",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/AudioPlayer.h",
 			"MU",
-			"526CGLRSAY/moc_AudioPlayer.cpp",
+			"EWIEGA46WW/moc_AudioPlayer.cpp",
 			null
 		],
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/MainWindow.h",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/MainWindow.h",
 			"MU",
-			"526CGLRSAY/moc_MainWindow.cpp",
+			"EWIEGA46WW/moc_MainWindow.cpp",
 			null
 		],
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/PlayerControls.h",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlayerControls.h",
 			"MU",
-			"526CGLRSAY/moc_PlayerControls.cpp",
+			"EWIEGA46WW/moc_PlayerControls.cpp",
 			null
 		],
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/PlaylistManager.h",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlaylistManager.h",
 			"MU",
-			"526CGLRSAY/moc_PlaylistManager.cpp",
+			"EWIEGA46WW/moc_PlaylistManager.cpp",
 			null
 		]
 	],
@@ -342,22 +342,22 @@
 	"SOURCES" : 
 	[
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/AudioPlayer.cpp",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/AudioPlayer.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/MainWindow.cpp",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/MainWindow.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/PlayerControls.cpp",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlayerControls.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/PlaylistManager.cpp",
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlaylistManager.cpp",
 			"MU",
 			null
 		],
