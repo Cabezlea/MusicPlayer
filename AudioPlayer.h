@@ -7,6 +7,15 @@
 
 
 class AudioPlayer {
+private:
+    //Fields
+
+public:
+    AudioPlayer();
+    void PlaySound();
+    void OpenFiles();
+    void ManageBuffer();
+    void PlayBack();
 
 };
 

@@ -8,6 +8,17 @@
 
 class PlayerControls {
 
+private:
+    //Private fields
+
+public:
+    PlayerControls();
+    void Play();
+    void Pause();
+    void Next();
+    void Previous();
+
+
 };
 
 

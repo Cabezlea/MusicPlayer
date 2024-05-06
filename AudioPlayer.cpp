@@ -1,5 +1,13 @@
-//
-// Created by User on 5/6/24.
-//
 
 #include "AudioPlayer.h"
+
+AudioPlayer::AudioPlayer() {}
+
+void AudioPlayer::ManageBuffer() {}
+
+void AudioPlayer::OpenFiles() {}
+
+void AudioPlayer::PlayBack() {}
+
+void AudioPlayer::PlaySound() {}
+

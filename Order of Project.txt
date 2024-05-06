@@ -1,7 +1,7 @@
 Initially we will create different classes to handle different things:
 
 *MainWindow inherits from QMainWindow
--This class will manage the main components of our the user interface, like menus, toolbars , and status bars
+-This class will manage the main components of our user interface, like menus, toolbars , and status bars
 
 *PlayerControls
 -create a "PlayerControls" class that can encapsulates

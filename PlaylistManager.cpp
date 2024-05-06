@@ -1,5 +1,7 @@
-//
-// Created by User on 5/6/24.
-//
 
 #include "PlaylistManager.h"
+PlaylistManager::PlaylistManager(){}
+
+void PlaylistManager::AddSong() {}
+void PlaylistManager::ChangeOrder() {}
+void PlaylistManager::RemoveSong() {}

@@ -1,5 +1,8 @@
-//
-// Created by User on 5/6/24.
-//
 
 #include "PlayerControls.h"
+PlayerControls::PlayerControls() {}
+
+void PlayerControls::Play() {}
+void PlayerControls::Pause() {}
+void PlayerControls::Next() {}
+void PlayerControls::Previous() {}
