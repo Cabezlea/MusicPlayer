@@ -1,0 +1,9 @@
+
+#ifndef UNTITLED_MAINWINDOW_H
+#define UNTITLED_MAINWINDOW_H
+
+
+class MainWindow {
+
+};
+#endif //UNTITLED_MAINWINDOW_H

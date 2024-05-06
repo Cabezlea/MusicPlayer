@@ -1,0 +1,11 @@
+
+#ifndef UNTITLED_PLAYERCONTROLS_H
+#define UNTITLED_PLAYERCONTROLS_H
+
+
+class PlayerControls {
+
+};
+
+
+#endif //UNTITLED_PLAYERCONTROLS_H

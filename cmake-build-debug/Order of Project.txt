@@ -1,0 +1,20 @@
+Initially we will create different classes to handle different things:
+
+*MainWindow inherits from QMainWindow
+-This class will manage the main components of our the user interface, like menus, toolbars , and status bars
+
+*PlayerControls
+-create a "PlayerControls" class that can encapsulates
+-It will encapsulate the play, pause, stop, next, and previous buttons
+-For the further developments it could include sliders for volume and track progress
+
+*PlaylistManager
+-Manages the playlist, including adding, removing, and changing the order of tracks
+
+*AudioPlayer
+-Handles audio playback which we will use PortAudio or another library
+-It will manage everything related to playing sound, opening files, managing buffers, and controlling playback state
+
+*Song - We will create this one later
+-The Song class could represent each track, including metadata like title, artist, album, and file path
+

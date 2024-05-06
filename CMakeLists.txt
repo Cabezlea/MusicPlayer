@@ -14,7 +14,16 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(untitled main.cpp)
+add_executable(untitled main.cpp
+        cmake-build-debug/MainWindow.cpp
+        cmake-build-debug/MainWindow.h
+        cmake-build-debug/PlayerControls.cpp
+        cmake-build-debug/PlayerControls.h
+        cmake-build-debug/PlaylistManager.cpp
+        cmake-build-debug/PlaylistManager.h
+        cmake-build-debug/AudioPlayer.cpp
+        cmake-build-debug/AudioPlayer.h
+)
 target_link_libraries(untitled
         Qt::Core
         Qt::Gui

@@ -1,15 +1,8 @@
 # ninja log v5
-4	34	1714174029878737254	untitled_autogen/timestamp	a574bf41dbc21f1d
-4	34	1714174029878737254	untitled_autogen/mocs_compilation.cpp	a574bf41dbc21f1d
-4	34	1714174029878737254	/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/timestamp	a574bf41dbc21f1d
-35	907	1714174030746603457	CMakeFiles/untitled.dir/main.cpp.o	44ef4f1ec5499ab7
-908	1021	1714174030861527718	untitled	e37e776093ad3d9d
-52	72	1714174010750015274	CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o	cf9b21e1f2f55240
-4	34	1714174029878737254	/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/mocs_compilation.cpp	a574bf41dbc21f1d
-4	45	1714175786174841214	untitled_autogen/timestamp	a574bf41dbc21f1d
-4	45	1714175786174841214	untitled_autogen/mocs_compilation.cpp	a574bf41dbc21f1d
-4	45	1714175786174841214	/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/timestamp	a574bf41dbc21f1d
-4	45	1714175786174841214	/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/mocs_compilation.cpp	a574bf41dbc21f1d
+7	39	1715018090538400835	untitled_autogen/timestamp	a574bf41dbc21f1d
+7	39	1715018090538400835	untitled_autogen/mocs_compilation.cpp	a574bf41dbc21f1d
+7	39	1715018090538400835	/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/timestamp	a574bf41dbc21f1d
+40	4839	1715018095331518992	CMakeFiles/untitled.dir/main.cpp.o	9d7becb50d569791
+4839	7019	1715018097514578224	untitled	cec05143e68d503b
 45	70	1714175786198970963	CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o	3d53f5fbc55ac464
-45	942	1714175787065902301	CMakeFiles/untitled.dir/main.cpp.o	9d7becb50d569791
-944	1071	1714175787197922216	untitled	cec05143e68d503b
+7	39	1715018090538400835	/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/mocs_compilation.cpp	a574bf41dbc21f1d

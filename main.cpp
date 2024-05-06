@@ -7,6 +7,4 @@ int main(int argc, char *argv[]) {
     button.resize(200, 100);
     button.show();
     return QApplication::exec();
-
-
 }
