@@ -11,11 +11,16 @@ class MainWindow : public QWidget {
 
 private:
     //Private fields
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 public:
     MainWindow(); //Constructor for the class
     void Menus(); // methods for the class
     void Toolbars();
     void StatusBar();
+
 
 
 };

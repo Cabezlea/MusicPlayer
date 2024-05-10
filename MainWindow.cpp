@@ -3,6 +3,7 @@
 #include <QMenuBar>
 #include <QLabel>
 #include <QWidget>
+#include <Qpainter>
 
 
 MainWindow::MainWindow() {
@@ -26,7 +27,25 @@ MainWindow::MainWindow() {
         // Handle error loading the image, used for debugging
         qDebug() << "Error loading background image.";
     }
+    update(); // Re-draws anything if needed, used as a preventive
 }
+//The argument is the QPaintEvent object, which provides info about the region painted
+void MainWindow::paintEvent(QPaintEvent *event) {
+    int h = 45;
+    QPainter painter(this);
+    int halfWidth = this->width()/2;
+    int height = this->height() - h;
+
+    QRect rectangleFirstPortion(0, height, halfWidth, h);// Color left side of rectangle
+    QBrush rectangleFirstColor(Qt::black); //Define the color of the rectangle
+
+    QRect rectangleSecondPortion(halfWidth, height, width(), h); //Color right side of rectangle
+    QBrush rectangleSecondColor(Qt::white);
+
+    painter.fillRect(rectangleFirstPortion, rectangleFirstColor); // Paint the rectangle portion with the rectangle color
+    painter.fillRect(rectangleSecondPortion, rectangleSecondColor); // Paint second portion
+}
+
 
 
 void MainWindow::Menus(){
