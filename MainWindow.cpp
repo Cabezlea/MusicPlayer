@@ -47,12 +47,30 @@ void MainWindow::paintEvent(QPaintEvent *event) {
 
     painter.fillRect(rectangleFirstPortion, rectangleFirstColor); // Paint the rectangle portion with the rectangle color
     painter.fillRect(rectangleSecondPortion, rectangleSecondColor); // Paint second portion
+
+
+
+    int boxHeightWindow = this->height() - 530; //Where the text will be placed in screen
+    int secondBoxHeight = this->height() - 200;
+    int halfWidthBox = this->width() / 2;
+    int leftStart = 25; // Text starts 25px from the left side of the screen
+    int heightOfText = 50; // Height of the text box
+    float boxWidth = 2.45;
+
+    QString boxText = "Name of Song";
+    QString lightText = "Open Source Music Player in C++";
+
+    QRect rectangleSong (leftStart, boxHeightWindow, width()/boxWidth, heightOfText );
+
+    painter.drawText(rectangleSong, Qt::AlignCenter, boxText);
 }
 
 
 
 void MainWindow::Menus(){
-
+    /*
+     * Here we will have logic for the menu such as song image and title of song
+     */
 }
 
 void MainWindow::Toolbars() {
