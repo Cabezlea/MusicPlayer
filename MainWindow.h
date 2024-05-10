@@ -5,8 +5,9 @@
 #ifndef UNTITLED_MAINWINDOW_H
 #define UNTITLED_MAINWINDOW_H
 
+#include <QWidget>
 
-class MainWindow {
+class MainWindow : public QWidget {
 
 private:
     //Private fields

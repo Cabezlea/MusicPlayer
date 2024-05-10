@@ -1,10 +1,10 @@
 #include <QApplication>
-#include <QPushButton>
+#include <QPushButton> //Creates a clickable button
+#include "MainWindow.h"
 
 int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
-    QPushButton button("Buena Norero", nullptr);
-    button.resize(200, 100);
-    button.show();
-    return QApplication::exec();
+    QApplication app(argc, argv);
+    MainWindow mainWindow;
+    mainWindow.show();
+    return app.exec();
 }
