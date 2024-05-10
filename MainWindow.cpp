@@ -11,6 +11,9 @@ MainWindow::MainWindow() {
     Toolbars();
     StatusBar();
 
+    QString title = "Coding Sesh Player";
+    setWindowTitle(title);
+
     resize(800,600); //Screen size
     // Load the background image using the absolute file path
     //QPixmap is a class provided by QT to handle images in applications, we create an object named bkgnd
