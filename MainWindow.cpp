@@ -51,18 +51,21 @@ void MainWindow::paintEvent(QPaintEvent *event) {
 
 
     int boxHeightWindow = this->height() - 530; //Where the text will be placed in screen
-    int secondBoxHeight = this->height() - 200;
+    int secondBoxHeight = this->height() - 490;
     int halfWidthBox = this->width() / 2;
     int leftStart = 25; // Text starts 25px from the left side of the screen
     int heightOfText = 50; // Height of the text box
     float boxWidth = 2.45;
+    float textWidth = 2.0;
 
     QString boxText = "Name of Song";
     QString lightText = "Open Source Music Player in C++";
 
     QRect rectangleSong (leftStart, boxHeightWindow, width()/boxWidth, heightOfText );
+    QRect rectangleText (leftStart, secondBoxHeight, width()/boxWidth, heightOfText);
 
-    painter.drawText(rectangleSong, Qt::AlignCenter, boxText);
+    painter.drawText(rectangleSong, Qt::AlignLeft, boxText);
+    painter.drawText(rectangleText, Qt::AlignLeft, lightText);
 }
 
 
