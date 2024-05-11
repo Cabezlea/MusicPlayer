@@ -11,7 +11,7 @@ MainWindow::MainWindow() {
     Toolbars();
     StatusBar();
 
-    QString title = "Coding Sesh Player";
+    QString title = "Open Source Music Player in C++";
     setWindowTitle(title);
 
     resize(800,600); //Screen size
@@ -52,23 +52,18 @@ void MainWindow::paintEvent(QPaintEvent *event) {
 
 
     int boxHeightWindow = this->height() - 530; //Where the text will be placed in screen
-    int secondBoxHeight = this->height() - 490;
-    int leftStart = 25; // Text starts 25px from the left side of the screen
-    int imageStart = 450; //What point in the screen the image will be placed (horizontal)
+    int leftStart = 450; // Text starts 25px from the left side of the screen
+    int imageStart = 25; //What point in the screen the image will be placed (horizontal)
     int heightOfText = 50; // Height of the text box
     int heightOfSong = 275;
     float boxWidth = 2.45;
 
     QString boxText = "Name of Song";
-    QString lightText = "Open Source Music Player in C++";
-
 
     QRect rectangleSong (leftStart, boxHeightWindow, width()/boxWidth, heightOfText );
-    QRect rectangleText (leftStart, secondBoxHeight, width()/boxWidth, heightOfText);
     QRect songImageBox (imageStart, boxHeightWindow, width()/boxWidth, heightOfSong);
 
-    painter.drawText(rectangleSong, Qt::AlignLeft, boxText);
-    painter.drawText(rectangleText, Qt::AlignLeft, lightText);
+    painter.drawText(rectangleSong, Qt::AlignCenter, boxText);
 
     QPixmap songImage ("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Oppenheimer.png");
     painter.drawPixmap (songImageBox, songImage);
