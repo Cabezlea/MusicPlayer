@@ -4,6 +4,9 @@
 #include <QLabel>
 #include <QWidget>
 #include <Qpainter>
+#include <QIcon>
+#include <QPushButton>
+#include <QHBoxLayout>
 
 
 MainWindow::MainWindow() {
@@ -79,9 +82,36 @@ void MainWindow::Menus(){
 }
 
 void MainWindow::Toolbars() {
+    /*
+     * Here we will have the logic for the Toolbars such as skip, play, pause, etc.
+     */
+
+    //Creating instances of the buttons, they are pointers because they need to be dynamic since we will be constantly updating the buttons
+
+    QPushButton *playButton = new QPushButton(this);
+    QPushButton *pauseButton = new QPushButton(this);
+    QPushButton *skipButton = new QPushButton(this);
+    QPushButton *backwardsButton = new QPushButton(this);
+
+    //Setting the images for each button
+    playButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/PlayButton.png"));
+    pauseButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/PauseButton.png"));
+    skipButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/SkipForward.png"));
+    backwardsButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/BackwardsButton.png"));
+
+    //Setting positions for the buttons using QHboxLayout/QVBoxLayout
+    QHBoxLayout *hLayout = new QHBoxLayout;
+
+    hLayout->addWidget(backwardsButton);
+    hLayout->addWidget(playButton);
+    hLayout->addWidget(pauseButton);
+    hLayout->addWidget(skipButton);
+
+    this->setLayout(hLayout);
+
+    //Connecting the buttons to functions using clicked()
 
 }
-
 void MainWindow::StatusBar() {
 
 }
