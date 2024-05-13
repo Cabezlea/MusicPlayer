@@ -86,6 +86,21 @@ void MainWindow::Toolbars() {
      * Here we will have the logic for the Toolbars such as skip, play, pause, etc.
      */
 
+    int toolbarsHeight = 30;
+    float toolbarsWidth = width()/8;
+    int spaceBetween = -400;
+    int buttonSize;
+
+    //Instance of the outer layout
+    QHBoxLayout *outerLayout = new QHBoxLayout;
+
+    //Setting positions using inner layout
+    QHBoxLayout *innerLayout1 = new QHBoxLayout;
+    QHBoxLayout *innerLayout2 = new QHBoxLayout;
+    QHBoxLayout *innerLayout3 = new QHBoxLayout;
+    QHBoxLayout *innerLayout4 = new QHBoxLayout;
+
+
     //Creating instances of the buttons, they are pointers because they need to be dynamic since we will be constantly updating the buttons
 
     QPushButton *playButton = new QPushButton(this);
@@ -99,15 +114,29 @@ void MainWindow::Toolbars() {
     skipButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/SkipForward.png"));
     backwardsButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/BackwardsButton.png"));
 
-    //Setting positions for the buttons using QHboxLayout/QVBoxLayout
-    QHBoxLayout *hLayout = new QHBoxLayout;
+    //Set fixed sizes for each button
+    playButton->setFixedSize(toolbarsWidth, toolbarsHeight);
+    pauseButton->setFixedSize(toolbarsWidth, toolbarsHeight);
+    skipButton->setFixedSize(toolbarsWidth, toolbarsHeight);
+    backwardsButton->setFixedSize(toolbarsWidth, toolbarsHeight);
 
-    hLayout->addWidget(backwardsButton);
-    hLayout->addWidget(playButton);
-    hLayout->addWidget(pauseButton);
-    hLayout->addWidget(skipButton);
+    innerLayout1->addWidget(backwardsButton);
+    innerLayout1->addSpacing(spaceBetween);
+    innerLayout2->addWidget(playButton);
+    innerLayout2->addSpacing(spaceBetween);
+    innerLayout3->addWidget(pauseButton);
+    innerLayout3->addSpacing(spaceBetween);
+    innerLayout4->addWidget(skipButton);
+    innerLayout4->addSpacing(spaceBetween);
 
-    this->setLayout(hLayout);
+    outerLayout->addLayout(innerLayout1);
+    outerLayout->addLayout(innerLayout2);
+    outerLayout->addLayout(innerLayout3);
+    outerLayout->addLayout(innerLayout4);
+
+
+    //Set outer Layout on a conteiner wdiget, organizing all containing widgets
+    this->setLayout(outerLayout);
 
     //Connecting the buttons to functions using clicked()
 
@@ -115,5 +144,3 @@ void MainWindow::Toolbars() {
 void MainWindow::StatusBar() {
 
 }
-
-
