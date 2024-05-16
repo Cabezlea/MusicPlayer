@@ -7,6 +7,8 @@
 #include <QIcon>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include <QProgressBar>
+#include <QSlider>
 
 
 MainWindow::MainWindow() {
@@ -143,5 +145,69 @@ void MainWindow::Toolbars() {
 
 
 void MainWindow::StatusBar() {
+    /*
+     * In this method we will create the UI for the song status bar and the bar to adjust the volume
+     */
+    QSlider *songStatusBar = new QSlider(Qt::Horizontal,this);
+    songStatusBar->setRange(0,100); //Range of song
+    songStatusBar->setValue(80); //Initial value
+    songStatusBar->setGeometry(470,300,275,20);
+
+    songStatusBar->setStyleSheet(R"(
+    QSlider::groove:horizontal {
+        border: 1px solid #b1b1b1;
+        background: #f3f3f3;
+        height: 4px;  // Slender groove
+        border-radius: 2px;
+        margin: 0px;  // Ensure the handle can align perfectly with the groove edges
+    }
+
+    QSlider::handle:horizontal {
+        background: #5CACEE;  // Bright color for the handle
+        border: 1px solid #5CACEE;
+        width: 10px;  // A small, visible handle
+        height: 10px;  // Ensure this is a round handle by setting height equal to width
+        margin: -3px 0;  // Slightly expand outside the groove to make handle round
+        border-radius: 5px;  // Make the handle perfectly round
+    }
+
+    QSlider::sub-page:horizontal {
+        background-color: #5CACEE;  // Color on the left side of the handle
+        border-radius: 2px;
+    }
+
+    QSlider::add-page:horizontal {
+        background-color: #b1b1b1;  // Color on the right side of the handle
+        border-radius: 2px;
+    }
+)");
+    songStatusBar->show();
+
+    //Now we will create the volume bar in herer to adjust it
+
+    QSlider *volumeSlider = new QSlider(Qt::Horizontal,this);
+    volumeSlider->setRange(0,100); //Range of song
+    volumeSlider->setValue(50); //Initial value
+    volumeSlider->setGeometry(470,350,275,20);
+
+    volumeSlider->setStyleSheet(R"(
+    QSlider::groove:horizontal {
+        border: 1px solid #b1b1b1;
+        height: 6px;  // Consistent with the progress bar
+        background: #f3f3f3;
+        border-radius: 5px;
+        margin: 0 0;  // Reduce margin to make the slider handle align with the track
+    }
+
+    QSlider::handle:horizontal {
+        background: #5CACEE;  // Bright blue for visibility
+        border: 1px solid #5CACEE;
+        width: 18px;  // Larger handle for better drag
+        margin: -6px 0;  // Expand touch area to the outside of the groove
+        border-radius: 9px;  // Perfect circle
+    }
+)");
+
+
 
 }
