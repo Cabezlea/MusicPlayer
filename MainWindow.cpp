@@ -56,7 +56,7 @@ void MainWindow::paintEvent(QPaintEvent *event) {
 
     int boxHeightWindow = this->height() - 530; //Where the text will be placed in screen
     int leftStart = 450; // Text starts 25px from the left side of the screen
-    int imageStart = 25; //What point in the screen the image will be placed (horizontal)
+    int imageStart = 25; //What points in the screen the image will be placed (horizontal)
     int heightOfText = 50; // Height of the text box
     int heightOfSong = 275;
     float boxWidth = 2.45;
@@ -77,70 +77,41 @@ void MainWindow::paintEvent(QPaintEvent *event) {
 
 void MainWindow::Menus(){
     /*
-     * Here we will have logic for the menu such as song image and title of song
+     * Here we will have UI for the menu such as song image and title of song
      */
 }
 
 void MainWindow::Toolbars() {
-    /*
-     * Here we will have the logic for the Toolbars such as skip, play, pause, etc.
-     */
+     /*
+      * Here we will have the UI for the Toolbars such as skip, play, pause, etc.
+      */
 
-    int toolbarsHeight = 30;
-    float toolbarsWidth = width()/8;
-    int spaceBetween = -400;
-    int buttonSize;
-
-    //Instance of the outer layout
-    QHBoxLayout *outerLayout = new QHBoxLayout;
-
-    //Setting positions using inner layout
-    QHBoxLayout *innerLayout1 = new QHBoxLayout;
-    QHBoxLayout *innerLayout2 = new QHBoxLayout;
-    QHBoxLayout *innerLayout3 = new QHBoxLayout;
-    QHBoxLayout *innerLayout4 = new QHBoxLayout;
-
-
-    //Creating instances of the buttons, they are pointers because they need to be dynamic since we will be constantly updating the buttons
-
+    // Creating instances of the buttons
+    QPushButton *backwardsButton = new QPushButton(this);
     QPushButton *playButton = new QPushButton(this);
     QPushButton *pauseButton = new QPushButton(this);
     QPushButton *skipButton = new QPushButton(this);
-    QPushButton *backwardsButton = new QPushButton(this);
 
-    //Setting the images for each button
+    // Setting the icons for each button
+    backwardsButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/BackwardsButton.png"));
     playButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/PlayButton.png"));
     pauseButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/PauseButton.png"));
     skipButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/SkipForward.png"));
-    backwardsButton->setIcon(QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/BackwardsButton.png"));
 
-    //Set fixed sizes for each button
-    playButton->setFixedSize(toolbarsWidth, toolbarsHeight);
-    pauseButton->setFixedSize(toolbarsWidth, toolbarsHeight);
-    skipButton->setFixedSize(toolbarsWidth, toolbarsHeight);
-    backwardsButton->setFixedSize(toolbarsWidth, toolbarsHeight);
+    // Set fixed sizes for each button
+    int buttonWidth = 120; //55
+    int buttonHeight = 50; //35
+    int startX = 150; // Starting x-coordinate for the first button
+    int startY = 390; // y-coordinate for all buttons
 
-    innerLayout1->addWidget(backwardsButton);
-    innerLayout1->addSpacing(spaceBetween);
-    innerLayout2->addWidget(playButton);
-    innerLayout2->addSpacing(spaceBetween);
-    innerLayout3->addWidget(pauseButton);
-    innerLayout3->addSpacing(spaceBetween);
-    innerLayout4->addWidget(skipButton);
-    innerLayout4->addSpacing(spaceBetween);
-
-    outerLayout->addLayout(innerLayout1);
-    outerLayout->addLayout(innerLayout2);
-    outerLayout->addLayout(innerLayout3);
-    outerLayout->addLayout(innerLayout4);
-
-
-    //Set outer Layout on a conteiner wdiget, organizing all containing widgets
-    this->setLayout(outerLayout);
-
-    //Connecting the buttons to functions using clicked()
-
+    // Positioning each button in the desired order: Backwards, Play, Pause, Skip
+    // Next button is calculated by startX + buttonWidth + spacing
+    backwardsButton->setGeometry(startX, startY, buttonWidth, buttonHeight);
+    playButton->setGeometry(startX + buttonWidth + 5, startY, buttonWidth, buttonHeight); //5 Pixels to the right and one button width
+    pauseButton->setGeometry(startX + 2 * (buttonWidth + 5), startY, buttonWidth, buttonHeight); //Two button widths and 2 spaces before we are stacking 2 buttons and 2 spaces before this button
+    skipButton->setGeometry(startX + 3 * (buttonWidth + 5), startY, buttonWidth, buttonHeight); //3 buttonWidths and 3 spaces to start x
 }
+
 void MainWindow::StatusBar() {
 
 }
