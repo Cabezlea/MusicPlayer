@@ -110,7 +110,37 @@ void MainWindow::Toolbars() {
     playButton->setGeometry(startX + buttonWidth + 5, startY, buttonWidth, buttonHeight); //5 Pixels to the right and one button width
     pauseButton->setGeometry(startX + 2 * (buttonWidth + 5), startY, buttonWidth, buttonHeight); //Two button widths and 2 spaces before we are stacking 2 buttons and 2 spaces before this button
     skipButton->setGeometry(startX + 3 * (buttonWidth + 5), startY, buttonWidth, buttonHeight); //3 buttonWidths and 3 spaces to start x
+
+    //New Size for icons
+    QSize iconSize(75,45);
+    backwardsButton->setIconSize(iconSize);
+    playButton->setIconSize(iconSize);
+    pauseButton->setIconSize(iconSize);
+    skipButton->setIconSize(iconSize);
+
+    //use setStyleSheet to remove the background from each button
+    playButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }" //Set property when button is static
+                              "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }" //When button is hovered
+                              "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }"); //When button is pressed
+    playButton->setCursor(Qt::PointingHandCursor);
+
+    pauseButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                               "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                               "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
+    pauseButton->setCursor(Qt::PointingHandCursor);
+
+    skipButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                              "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                              "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
+    skipButton->setCursor(Qt::PointingHandCursor);
+
+    backwardsButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                                   "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                                   "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
+    backwardsButton->setCursor(Qt::PointingHandCursor);
+
 }
+
 
 void MainWindow::StatusBar() {
 
