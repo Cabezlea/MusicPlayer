@@ -22,7 +22,7 @@ MainWindow::MainWindow() {
     resize(800,600); //Screen size
     // Load the background image using the absolute file path
     //QPixmap is a class provided by QT to handle images in applications, we create an object named bkgnd
-    QPixmap bkgnd("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Tron.png"); // Replace "/home/user/Pictures/background.png" with the actual path to your image file
+    QPixmap bkgnd("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/InterstellarImage.png"); // Replace "/home/user/Pictures/background.png" with the actual path to your image file
 
     if (!bkgnd.isNull()) { // Check if the pixmap is valid
         bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio); //If valid scales image to window size
@@ -151,63 +151,49 @@ void MainWindow::StatusBar() {
     QSlider *songStatusBar = new QSlider(Qt::Horizontal,this);
     songStatusBar->setRange(0,100); //Range of song
     songStatusBar->setValue(80); //Initial value
-    songStatusBar->setGeometry(470,300,275,20);
+    songStatusBar->setGeometry(470,170,275,20);
+
+    //Now we will create the volume bar in here to adjust it
 
     songStatusBar->setStyleSheet(R"(
-    QSlider::groove:horizontal {
-        border: 1px solid #b1b1b1;
-        background: #f3f3f3;
-        height: 4px;  // Slender groove
-        border-radius: 2px;
-        margin: 0px;  // Ensure the handle can align perfectly with the groove edges
-    }
+        QSlider::groove:horizontal {
+            border: 1px solid #b1b1b1;
+            background: #f3f3f3;
+            height: 4px;
+            border-radius: 2px;
+        }
+        QSlider::handle:horizontal {
+            background: #5CACEE;
+            border: 1px solid #5CACEE;
+            width: 10px;
+            height: 10px;
+            margin: -3px 0;
+            border-radius: 5px;
+        }
+        QSlider::sub-page:horizontal {
+            background-color: #5CACEE;
+            border-radius: 2px;
+        }
+        QSlider::add-page:horizontal {
+            background-color: #b1b1b1;
+            border-radius: 2px;
+        }
+    )");
 
-    QSlider::handle:horizontal {
-        background: #5CACEE;  // Bright color for the handle
-        border: 1px solid #5CACEE;
-        width: 10px;  // A small, visible handle
-        height: 10px;  // Ensure this is a round handle by setting height equal to width
-        margin: -3px 0;  // Slightly expand outside the groove to make handle round
-        border-radius: 5px;  // Make the handle perfectly round
-    }
+    // Labels for the start and end times
+    QLabel *startLabel = new QLabel("0:00", this);
+    QLabel *endLabel = new QLabel("4:30", this);
 
-    QSlider::sub-page:horizontal {
-        background-color: #5CACEE;  // Color on the left side of the handle
-        border-radius: 2px;
-    }
+    startLabel->setGeometry(470, 150, 40, 20); // Adjust position to line up with the start of the slider
+    endLabel->setGeometry(715, 150, 40, 20); // Adjust position to line up with the end of the slider
 
-    QSlider::add-page:horizontal {
-        background-color: #b1b1b1;  // Color on the right side of the handle
-        border-radius: 2px;
-    }
-)");
+    startLabel->show();
+    endLabel->show();
     songStatusBar->show();
-
-    //Now we will create the volume bar in herer to adjust it
 
     QSlider *volumeSlider = new QSlider(Qt::Horizontal,this);
     volumeSlider->setRange(0,100); //Range of song
     volumeSlider->setValue(50); //Initial value
-    volumeSlider->setGeometry(470,350,275,20);
-
-    volumeSlider->setStyleSheet(R"(
-    QSlider::groove:horizontal {
-        border: 1px solid #b1b1b1;
-        height: 6px;  // Consistent with the progress bar
-        background: #f3f3f3;
-        border-radius: 5px;
-        margin: 0 0;  // Reduce margin to make the slider handle align with the track
-    }
-
-    QSlider::handle:horizontal {
-        background: #5CACEE;  // Bright blue for visibility
-        border: 1px solid #5CACEE;
-        width: 18px;  // Larger handle for better drag
-        margin: -6px 0;  // Expand touch area to the outside of the groove
-        border-radius: 9px;  // Perfect circle
-    }
-)");
-
-
+    volumeSlider->setGeometry(470,320,275,20);
 
 }
