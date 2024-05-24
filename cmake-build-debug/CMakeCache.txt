@@ -311,6 +311,18 @@ Qt6_DIR:PATH=/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6
 WrapOpenGL_AGL:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AGL.framework
 
 //Value Computed by CMake
+musicPlayer_BINARY_DIR:STATIC=/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug
+
+//Value Computed by CMake
+musicPlayer_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+musicPlayer_SOURCE_DIR:STATIC=/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer
+
+//The directory containing a CMake configuration file for portaudio.
+portaudio_DIR:PATH=portaudio_DIR-NOTFOUND
+
+//Value Computed by CMake
 untitled_BINARY_DIR:STATIC=/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug
 
 //Value Computed by CMake
