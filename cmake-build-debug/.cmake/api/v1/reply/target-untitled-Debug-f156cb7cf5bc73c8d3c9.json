@@ -11,10 +11,12 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_libraries",
 			"set_target_properties",
 			"include",
 			"find_package",
-			"target_link_libraries"
+			"TARGET_LINK_LIBRARIES",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -27,7 +29,8 @@
 			"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake",
 			"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
 			"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
-			"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake"
+			"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake",
+			"portaudio/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -37,133 +40,148 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 17,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 1,
 				"file" : 0,
-				"line" : 11,
+				"line" : 34,
 				"parent" : 0
-			},
-			{
-				"file" : 3,
-				"parent" : 2
-			},
-			{
-				"command" : 3,
-				"file" : 3,
-				"line" : 167,
-				"parent" : 3
-			},
-			{
-				"file" : 2,
-				"parent" : 4
-			},
-			{
-				"command" : 2,
-				"file" : 2,
-				"line" : 60,
-				"parent" : 5
-			},
-			{
-				"file" : 1,
-				"parent" : 6
-			},
-			{
-				"command" : 1,
-				"file" : 1,
-				"line" : 61,
-				"parent" : 7
-			},
-			{
-				"command" : 3,
-				"file" : 3,
-				"line" : 167,
-				"parent" : 3
-			},
-			{
-				"file" : 5,
-				"parent" : 9
-			},
-			{
-				"command" : 2,
-				"file" : 5,
-				"line" : 60,
-				"parent" : 10
-			},
-			{
-				"file" : 4,
-				"parent" : 11
-			},
-			{
-				"command" : 1,
-				"file" : 4,
-				"line" : 61,
-				"parent" : 12
-			},
-			{
-				"command" : 3,
-				"file" : 3,
-				"line" : 167,
-				"parent" : 3
-			},
-			{
-				"file" : 7,
-				"parent" : 14
-			},
-			{
-				"command" : 2,
-				"file" : 7,
-				"line" : 62,
-				"parent" : 15
-			},
-			{
-				"file" : 6,
-				"parent" : 16
-			},
-			{
-				"command" : 1,
-				"file" : 6,
-				"line" : 61,
-				"parent" : 17
-			},
-			{
-				"command" : 2,
-				"file" : 7,
-				"line" : 57,
-				"parent" : 15
-			},
-			{
-				"file" : 8,
-				"parent" : 19
-			},
-			{
-				"command" : 1,
-				"file" : 8,
-				"line" : 62,
-				"parent" : 20
-			},
-			{
-				"command" : 2,
-				"file" : 5,
-				"line" : 55,
-				"parent" : 10
-			},
-			{
-				"file" : 9,
-				"parent" : 22
-			},
-			{
-				"command" : 1,
-				"file" : 9,
-				"line" : 62,
-				"parent" : 23
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 27,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"file" : 3,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 167,
+				"parent" : 4
+			},
+			{
+				"file" : 2,
+				"parent" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 60,
+				"parent" : 6
+			},
+			{
+				"file" : 1,
+				"parent" : 7
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 61,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 167,
+				"parent" : 4
+			},
+			{
+				"file" : 5,
+				"parent" : 10
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 60,
+				"parent" : 11
+			},
+			{
+				"file" : 4,
+				"parent" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 61,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 167,
+				"parent" : 4
+			},
+			{
+				"file" : 7,
+				"parent" : 15
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 62,
+				"parent" : 16
+			},
+			{
+				"file" : 6,
+				"parent" : 17
+			},
+			{
+				"command" : 2,
+				"file" : 6,
+				"line" : 61,
+				"parent" : 18
+			},
+			{
+				"command" : 3,
+				"file" : 7,
+				"line" : 57,
+				"parent" : 16
+			},
+			{
+				"file" : 8,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 8,
+				"line" : 62,
+				"parent" : 21
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 55,
+				"parent" : 11
+			},
+			{
+				"file" : 9,
+				"parent" : 23
+			},
+			{
+				"command" : 2,
+				"file" : 9,
+				"line" : 62,
+				"parent" : 24
+			},
+			{
+				"file" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 10,
+				"line" : 377,
+				"parent" : 26
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -180,32 +198,32 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"define" : "QT_CORE_LIB"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"define" : "QT_GUI_LIB"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"define" : "QT_WIDGETS_LIB"
 				}
 			],
 			"frameworks" : 
 			[
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/lib/QtGui.framework"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework"
 				}
@@ -213,32 +231,36 @@
 			"includes" : 
 			[
 				{
+					"backtrace" : 28,
+					"path" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include"
+				},
+				{
 					"backtrace" : 0,
 					"isSystem" : true,
 					"path" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/include"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/include"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Headers"
 				},
 				{
-					"backtrace" : 25,
+					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "/Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers"
 				}
@@ -248,8 +270,8 @@
 			{
 				"backtraces" : 
 				[
-					25,
-					25
+					2,
+					2
 				],
 				"standard" : "17"
 			},
@@ -272,6 +294,10 @@
 		{
 			"backtrace" : 0,
 			"id" : "untitled_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "portaudio::@7bdaf24a3bf74634aa6c"
 		}
 	],
 	"id" : "untitled::@6890427a1f51a3e7e1df",
@@ -292,31 +318,36 @@
 				"role" : "frameworkPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/user/Qt/6.7.0/macOS/lib",
+				"fragment" : "-Wl,-rpath,/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/portaudio -Wl,-rpath,/Users/user/Qt/6.7.0/macOS/lib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 8,
+				"backtrace" : 2,
+				"fragment" : "portaudio/libportaudio.dylib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
 				"fragment" : "/Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Versions/A/QtWidgets",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 13,
+				"backtrace" : 14,
 				"fragment" : "/Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Versions/A/QtGui",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 18,
+				"backtrace" : 19,
 				"fragment" : "/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Versions/A/QtCore",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 21,
+				"backtrace" : 22,
 				"fragment" : "-framework IOKit",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 21,
+				"backtrace" : 22,
 				"fragment" : "-framework DiskArbitration",
 				"role" : "libraries"
 			},
@@ -329,18 +360,48 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 24,
+				"backtrace" : 25,
 				"fragment" : "-framework AppKit",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 24,
+				"backtrace" : 25,
 				"fragment" : "-framework ImageIO",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 24,
+				"backtrace" : 25,
 				"fragment" : "-framework Metal",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-Xlinker -framework -Xlinker CoreAudio",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-Xlinker -framework -Xlinker AudioToolbox",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-Xlinker -framework -Xlinker AudioUnit",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-Xlinker -framework -Xlinker CoreFoundation",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-Xlinker -framework -Xlinker CoreServices",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "-lpthread",
 				"role" : "libraries"
 			}
 		],
