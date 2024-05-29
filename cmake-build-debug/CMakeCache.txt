@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a library.
+AUDIOTOOLBOX_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioToolbox.framework
+
+//Path to a library.
+AUDIOUNIT_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioUnit.framework
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -261,6 +267,15 @@ CMAKE_TAPI:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeD
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a library.
+COREAUDIO_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreAudio.framework
+
+//Path to a library.
+COREFOUNDATION_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreFoundation.framework
+
+//Path to a library.
+CORESERVICES_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreServices.framework
+
 //Path to a program.
 MACDEPLOYQT_EXECUTABLE:FILEPATH=/Users/user/Qt/6.7.0/macOS/bin/macdeployqt
 
@@ -272,6 +287,33 @@ OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/
 
 //GLU library for OS X (usually same as OpenGL library)
 OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
+
+//Include example projects
+PA_BUILD_EXAMPLES:BOOL=OFF
+
+//Build shared/dynamic library
+PA_BUILD_SHARED:BOOL=ON
+
+//Build static library
+PA_BUILD_STATIC:BOOL=ON
+
+//Include test projects
+PA_BUILD_TESTS:BOOL=OFF
+
+//Disable targets install and uninstall (for embedded builds)
+PA_DISABLE_INSTALL:BOOL=OFF
+
+//Enable debug output for Portaudio
+PA_ENABLE_DEBUG_OUTPUT:BOOL=OFF
+
+//Add suffix _static to static library name
+PA_LIBNAME_ADD_SUFFIX:BOOL=OFF
+
+//Generate an OS X framework instead of the simple library
+PA_OUTPUT_OSX_FRAMEWORK:BOOL=OFF
+
+//Enable support for CoreAudio
+PA_USE_COREAUDIO:BOOL=ON
 
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
@@ -322,6 +364,12 @@ musicPlayer_SOURCE_DIR:STATIC=/Users/user/Dropbox/Mac/Desktop/Projects/C++/Perso
 //The directory containing a CMake configuration file for portaudio.
 portaudio_DIR:PATH=portaudio_DIR-NOTFOUND
 
+//Dependencies for the target
+portaudio_LIB_DEPENDS:STATIC=general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreAudio.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioToolbox.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioUnit.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreFoundation.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreServices.framework;general;m;general;pthread;
+
+//Dependencies for the target
+portaudio_static_LIB_DEPENDS:STATIC=general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreAudio.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioToolbox.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioUnit.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreFoundation.framework;general;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreServices.framework;general;m;general;pthread;
+
 //Value Computed by CMake
 untitled_BINARY_DIR:STATIC=/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug
 
@@ -336,6 +384,10 @@ untitled_SOURCE_DIR:STATIC=/Users/user/Dropbox/Mac/Desktop/Projects/C++/Personal
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: AUDIOTOOLBOX_LIBRARY
+AUDIOTOOLBOX_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: AUDIOUNIT_LIBRARY
+AUDIOUNIT_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -458,7 +510,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -503,6 +555,12 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: COREAUDIO_LIBRARY
+COREAUDIO_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: COREFOUNDATION_LIBRARY
+COREFOUNDATION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CORESERVICES_LIBRARY
+CORESERVICES_LIBRARY-ADVANCED:INTERNAL=1
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework][/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework][c ][v()]
 //Details about finding Threads
@@ -519,6 +577,8 @@ OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PA_LIBNAME_ADD_SUFFIX
+PA_LIBNAME_ADD_SUFFIX-ADVANCED:INTERNAL=1
 //Qt feature: abstractbutton (from target Qt6::Widgets)
 QT_FEATURE_abstractbutton:INTERNAL=ON
 //Qt feature: abstractslider (from target Qt6::Widgets)

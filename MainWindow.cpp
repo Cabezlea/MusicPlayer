@@ -1,16 +1,20 @@
 //This is where we define the class functions do
 #include "MainWindow.h"
-#include <QMenuBar>
-#include <QLabel>
-#include <QWidget>
-#include <Qpainter>
-#include <QIcon>
 #include <QPushButton>
-#include <QHBoxLayout>
-#include <QProgressBar>
 #include <QSlider>
+#include <QLabel>
+#include <QPixmap>
+#include <QPalette>
+#include <QDebug>
+#include <QPainter>
+#include <QVBoxLayout>
+
 
 MainWindow::MainWindow() {
+
+    playerControls = new PlayerControls(this);
+    audioPlayer = new AudioPlayer(this);
+
     Menus();
     Toolbars();
     StatusBar();
@@ -35,6 +39,8 @@ MainWindow::MainWindow() {
         qDebug() << "Error loading background image.";
     }
     update(); // Re-draws anything if needed, used as a preventive
+    connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
+
 }
 
 //The argument is the QPaintEvent object, which provides info about the region painted
@@ -139,6 +145,9 @@ void MainWindow::Toolbars() {
                                    "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
                                    "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
     backwardsButton->setCursor(Qt::PointingHandCursor);
+
+    connect(playButton, &QPushButton::clicked, playerControls, &PlayerControls::Play);
+
 
 }
 

@@ -8,11 +8,18 @@ set(CMAKE_AUTOUIC ON)
 
 set(CMAKE_PREFIX_PATH "/Users/user/Qt/6.7.0/macos/lib")
 
+# Include QT6
 find_package(Qt6 COMPONENTS
         Core
         Gui
         Widgets
         REQUIRED)
+
+# Add the portAudio subdirectory
+add_subdirectory(portaudio)
+
+# Include the portaudio header directory
+include_directories(/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include)
 
 add_executable(untitled main.cpp
         MainWindow.cpp
@@ -28,5 +35,5 @@ target_link_libraries(untitled
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        portaudio
 )
-

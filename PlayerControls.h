@@ -5,20 +5,19 @@
 #ifndef UNTITLED_PLAYERCONTROLS_H
 #define UNTITLED_PLAYERCONTROLS_H
 
+#include<QWidget>
 
-class PlayerControls {
-
-private:
-    //Private fields
-
+class PlayerControls : public QObject
+{
+Q_OBJECT
 public:
-    PlayerControls();
+    PlayerControls(QObject *parent = nullptr);
     void Play();
     void Pause();
     void Next();
     void Previous();
-
-
+signals:
+    void PlayRequested();
 };
 
 

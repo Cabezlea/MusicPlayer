@@ -1,0 +1,9 @@
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/portaudio.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/portaudio_static.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/uninstall.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/edit_cache.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/rebuild_cache.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/list_install_components.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/install.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/install/local.dir
+/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/build/CMakeFiles/install/strip.dir

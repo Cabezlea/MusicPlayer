@@ -6,18 +6,19 @@
 #define UNTITLED_AUDIOPLAYER_H
 
 
-class AudioPlayer {
-private:
-    //Fields
+#include <QObject>
 
+class AudioPlayer : public QObject
+{
+Q_OBJECT
 public:
-    AudioPlayer();
+    AudioPlayer(QObject *parent = nullptr);
     void PlaySound();
     void OpenFiles();
     void ManageBuffer();
     void PlayBack();
-
 };
+
 
 
 #endif //UNTITLED_AUDIOPLAYER_H

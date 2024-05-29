@@ -6,11 +6,16 @@
 #define UNTITLED_MAINWINDOW_H
 
 #include <QWidget>
+#include "AudioPlayer.h"
+#include "PlayerControls.h"
 
 class MainWindow : public QWidget {
 
+    Q_OBJECT
 private:
     //Private fields
+    PlayerControls *playerControls;
+    AudioPlayer *audioPlayer;
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -20,6 +25,7 @@ public:
     void Menus(); // methods for the class
     void Toolbars();
     void StatusBar();
+
 
 
 
