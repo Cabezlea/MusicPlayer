@@ -991,4 +991,5 @@
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
-  /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
+  /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h \
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h

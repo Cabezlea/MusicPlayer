@@ -1,5 +1,7 @@
 //This is where we define the class functions do
 #include "MainWindow.h"
+#include "PlayerControls.h"
+#include "AudioPlayer.h"
 #include <QPushButton>
 #include <QSlider>
 #include <QLabel>
@@ -8,6 +10,9 @@
 #include <QDebug>
 #include <QPainter>
 #include <QVBoxLayout>
+#include <QDir>
+#include <QFileInfoList>
+#include <QStringList>
 
 
 MainWindow::MainWindow() {
@@ -39,8 +44,28 @@ MainWindow::MainWindow() {
         qDebug() << "Error loading background image.";
     }
     update(); // Re-draws anything if needed, used as a preventive
-    connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
+    loadSongs("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
 
+    connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
+}
+
+
+void MainWindow::loadSongs(const QString &directoryPath) {
+    QDir dir(directoryPath);
+    QStringList filters;
+    filters << "*.m4a" << "*.mp3" << "*.wav";
+    dir.setNameFilters(filters);
+    QFileInfoList fileList = dir.entryInfoList();
+
+    if (fileList.isEmpty()) {
+        qDebug() << "No songs loaded.";
+        return;
+    }
+
+            foreach(QFileInfo fileInfo, fileList) {
+            audioPlayer->OpenFiles(fileInfo.absoluteFilePath().toStdString());
+            break; // Load the first song for now
+        }
 }
 
 //The argument is the QPaintEvent object, which provides info about the region painted
@@ -126,9 +151,9 @@ void MainWindow::Toolbars() {
     skipButton->setIconSize(iconSize);
 
     //use setStyleSheet to remove the background from each button
-    playButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }" //Set property when button is static
-                              "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }" //When button is hovered
-                              "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }"); //When button is pressed
+    playButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                              "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                              "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
     playButton->setCursor(Qt::PointingHandCursor);
 
     pauseButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
@@ -147,8 +172,6 @@ void MainWindow::Toolbars() {
     backwardsButton->setCursor(Qt::PointingHandCursor);
 
     connect(playButton, &QPushButton::clicked, playerControls, &PlayerControls::Play);
-
-
 }
 
 

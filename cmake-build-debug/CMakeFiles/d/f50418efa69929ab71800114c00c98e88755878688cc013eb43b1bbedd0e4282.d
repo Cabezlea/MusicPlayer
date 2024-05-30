@@ -1206,4 +1206,5 @@ untitled_autogen/timestamp: \
   /Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicTargetHelpers.cmake \
   /Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicTestHelpers.cmake \
   /Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicToolHelpers.cmake \
-  /Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake
+  /Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake \
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h

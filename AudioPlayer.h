@@ -9,22 +9,37 @@
 #include <QObject>
 #include "portaudio.h"
 #include "sndfile.h"
+#include <string>
+#include <vector>
 
-class AudioPlayer : public QObject
-{
+class AudioPlayer : public QObject {
 Q_OBJECT
+
+public:
+    AudioPlayer(QObject *parent = nullptr);
+    ~AudioPlayer();
+    void OpenFiles(const std::string &filePath);
+    void PlaySound();
+    void StopSound();
+    void ManageBuffer();
+    void PlayBack();
+    void LoadSongsFromDirectory(const std::string &directoryPath);
+    void PlayNextSong();
 
 private:
     PaStream *stream;
-static int audioCallback(const void *input, void *output, unsigned long frameCount,
-                         const PaStreamCallbackTimeInfo *timeInfo, PaStreamCallbackFlags statusFlags,
-                         void *userData);
-public:
-    AudioPlayer(QObject *parent = nullptr);
-    void PlaySound();
-    void OpenFiles();
-    void ManageBuffer();
-    void PlayBack();
+    SNDFILE *sndFile;
+    SF_INFO sfInfo;
+    float *buffer;
+    std::vector<std::string> songList;
+    int currentSongIndex;
+    static int audioCallback(const void *input, void *output, unsigned long frameCount,
+                             const PaStreamCallbackTimeInfo *timeInfo, PaStreamCallbackFlags statusFlags,
+                             void *userData);
+    size_t bufferSize = 1024;
+
+signals:
+    void PlaybackFinished();
 };
 
 

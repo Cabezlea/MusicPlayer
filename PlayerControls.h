@@ -7,17 +7,21 @@
 
 #include<QWidget>
 
-class PlayerControls : public QObject
-{
+class PlayerControls : public QObject {
 Q_OBJECT
+
 public:
     PlayerControls(QObject *parent = nullptr);
     void Play();
     void Pause();
     void Next();
     void Previous();
+
 signals:
     void PlayRequested();
+    void PauseRequested();
+    void NextRequested();
+    void PreviousRequested();
 };
 
 

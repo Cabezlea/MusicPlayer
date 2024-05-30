@@ -25,10 +25,7 @@ public:
     void Menus(); // methods for the class
     void Toolbars();
     void StatusBar();
-
-
-
-
+    void loadSongs(const QString &directoryPath);
 };
 
 

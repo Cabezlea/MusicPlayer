@@ -940,4 +940,5 @@
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
-  /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h
+  /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h
