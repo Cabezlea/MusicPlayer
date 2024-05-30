@@ -17,9 +17,16 @@ find_package(Qt6 COMPONENTS
 
 # Add the portAudio subdirectory
 add_subdirectory(portaudio)
-
 # Include the portaudio header directory
 include_directories(/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include)
+
+
+# Add the include directory for libsndfile this is where we find the header
+include_directories(/opt/homebrew/Cellar/libsndfile/1.2.2/include)
+
+# Add the library directory for libsndfile where we find the library
+link_directories(/opt/homebrew/Cellar/libsndfile/1.2.2/lib)
+
 
 add_executable(untitled main.cpp
         MainWindow.cpp
@@ -36,4 +43,5 @@ target_link_libraries(untitled
         Qt::Gui
         Qt::Widgets
         portaudio
+        sndfile
 )

@@ -7,6 +7,9 @@ CMake Deprecation Warning at portaudio/CMakeLists.txt:7 (CMAKE_MINIMUM_REQUIRED)
   CMake that the project does not need compatibility with older versions.
 
 
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug
+CMake Error at CMakeLists.txt:24 (add_subdirectory):
+  add_subdirectory given source "libsndfile" which is not an existing
+  directory.
+
+
+-- Configuring incomplete, errors occurred!

@@ -1,0 +1,289 @@
+{
+	"BUILD_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/portaudio_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio",
+	"CMAKE_EXECUTABLE" : "/opt/homebrew/Cellar/cmake/3.29.3/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/CMakeLists.txt",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/TestBigEndian.cmake",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckTypeSize.cmake",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckIncludeFile.cmake",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CheckIncludeFileCXX.cmake",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakePackageConfigHelpers.cmake",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/WriteBasicConfigVersionFile.cmake",
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/cmake_support/portaudioConfig.cmake.in",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in",
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/cmake_support/portaudio-2.0.pc.in",
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/cmake_support/cmake_uninstall.cmake.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/portaudio_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "portaudio_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/pa_mac_core.h",
+			"MU",
+			"6YEA5652QU/moc_pa_mac_core.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h",
+			"MU",
+			"6YEA5652QU/moc_portaudio.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_allocation.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_allocation.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_converters.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_converters.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_cpuload.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_cpuload.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_debugprint.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_debugprint.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_dither.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_dither.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_endianness.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_endianness.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_hostapi.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_hostapi.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_memorybarrier.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_memorybarrier.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_process.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_process.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_ringbuffer.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_ringbuffer.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_stream.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_stream.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_trace.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_trace.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_types.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_types.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_util.h",
+			"MU",
+			"2PZEZPHIBF/moc_pa_util.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/hostapi/coreaudio/pa_mac_core_blocking.h",
+			"MU",
+			"EHRJ3W4NYS/moc_pa_mac_core_blocking.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/hostapi/coreaudio/pa_mac_core_utilities.h",
+			"MU",
+			"EHRJ3W4NYS/moc_pa_mac_core_utilities.cpp",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/os/unix/pa_unix_util.h",
+			"MU",
+			"LRRAULYRG4/moc_pa_unix_util.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/portaudio_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/portaudio_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "PA_LITTLE_ENDIAN", "PA_USE_COREAUDIO", "portaudio_EXPORTS" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common",
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio",
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/os/unix",
+		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreAudio.framework",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioToolbox.framework",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AudioUnit.framework",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreFoundation.framework",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreServices.framework",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"/opt/homebrew/Cellar/cmake/3.29.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/portaudio_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/CMakeFiles/portaudio_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/Users/user/Qt/6.7.0/macOS/./libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/Users/user/Qt/6.7.0/macOS/./libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 7,
+	"SETTINGS_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/portaudio/CMakeFiles/portaudio_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_allocation.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_converters.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_cpuload.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_debugprint.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_dither.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_front.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_process.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_ringbuffer.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_stream.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/common/pa_trace.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/hostapi/coreaudio/pa_mac_core.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/hostapi/coreaudio/pa_mac_core_blocking.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/hostapi/coreaudio/pa_mac_core_utilities.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/hostapi/skeleton/pa_hostapi_skeleton.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/os/unix/pa_unix_hostapis.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/src/os/unix/pa_unix_util.c",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

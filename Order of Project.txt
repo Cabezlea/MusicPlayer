@@ -26,4 +26,8 @@ Initially we will create different classes to handle different things:
 
 *Logic:
 - Once the UI looks good and functions with the placeholders we can integrate the backend logic
-
+- So for the Logic we will get started with being able to play and pause music, after we get that done we can go ahead
+- and implement the logic for skipping or rewinding
+- Then implement the logic so that the name of the song rotates as well as the image of the song
+- In PlayerControls we will worry about handling the independent logic of each button
+- In AudioPlayer we will handle the audio playback, move between libraries and that stuff

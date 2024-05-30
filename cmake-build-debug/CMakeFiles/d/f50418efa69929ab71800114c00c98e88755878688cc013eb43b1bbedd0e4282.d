@@ -892,6 +892,7 @@ untitled_autogen/timestamp: \
   CMakeFiles/3.27.8/CMakeSystem.cmake \
   untitled_autogen/moc_predefs.h \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/main.cpp \
+  /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h \
   /Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6/Qt6Config.cmake \
   /Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6/Qt6ConfigExtras.cmake \
   /Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6/Qt6ConfigVersion.cmake \

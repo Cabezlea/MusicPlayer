@@ -296,6 +296,7 @@
 	"MOC_INCLUDES" : 
 	[
 		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include",
+		"/opt/homebrew/include",
 		"/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers",
 		"/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework",
 		"/Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang",
