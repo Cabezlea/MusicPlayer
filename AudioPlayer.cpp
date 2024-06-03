@@ -4,18 +4,23 @@
 #include <iostream>
 #include <filesystem>
 
-AudioPlayer::AudioPlayer(QObject *parent) : QObject(parent), stream(nullptr), sndFile(nullptr), buffer(nullptr), currentSongIndex(0) {
-    // Initialize PortAudio
+AudioPlayer::AudioPlayer(QObject *parent)
+        : QObject(parent), stream(nullptr), sndFile(nullptr), buffer(nullptr),
+          currentSongIndex(0), isPlaying(false) {
     PaError err = Pa_Initialize();
     if (err != paNoError) {
         std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
     }
 
     // Load songs from a specified directory
-    LoadSongsFromDirectory("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");  // Replace with your actual path
+    LoadSongsFromDirectory("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
 }
 
 AudioPlayer::~AudioPlayer() {
+    if (stream) {
+        Pa_StopStream(stream);
+        Pa_CloseStream(stream);
+    }
     Pa_Terminate();
     delete[] buffer;
 }
@@ -23,7 +28,6 @@ AudioPlayer::~AudioPlayer() {
 void AudioPlayer::LoadSongsFromDirectory(const std::string &directoryPath) {
     std::cout << "Loading songs from directory: " << directoryPath << std::endl;
     for (const auto &entry : std::filesystem::directory_iterator(directoryPath)) {
-        std::cout << "Found file: " << entry.path() << " with extension: " << entry.path().extension() << std::endl;
         if (entry.path().extension() == ".m4a" || entry.path().extension() == ".wav") {
             songList.push_back(entry.path().string());
             std::cout << "Loaded: " << entry.path().string() << std::endl;
@@ -58,45 +62,62 @@ void AudioPlayer::PlaySound() {
 
     PaStreamParameters outputParameters;
     outputParameters.device = Pa_GetDefaultOutputDevice();
-    outputParameters.channelCount = sfInfo.channels;  // stereo output
+    outputParameters.channelCount = sfInfo.channels;
     outputParameters.sampleFormat = paFloat32;
     outputParameters.suggestedLatency = Pa_GetDeviceInfo(outputParameters.device)->defaultLowOutputLatency;
     outputParameters.hostApiSpecificStreamInfo = NULL;
 
-    PaError err = Pa_OpenStream(
-            &stream,
-            NULL, // no input
-            &outputParameters,
-            sfInfo.samplerate, // sample rate
-            paFramesPerBufferUnspecified,
-            paClipOff, // no clipping
-            audioCallback, // callback function
-            this // user data
-    );
-
+    PaError err = Pa_OpenStream(&stream, NULL, &outputParameters, sfInfo.samplerate, paFramesPerBufferUnspecified, paClipOff, audioCallback, this);
     if (err != paNoError) {
         std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+        return;
     }
 
     err = Pa_StartStream(stream);
     if (err != paNoError) {
         std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+        return;
+    }
+    isPlaying = true;
+}
+
+void AudioPlayer::PauseSound() {
+    if (isPlaying && stream) {
+        PaError err = Pa_StopStream(stream);
+        if (err != paNoError) {
+            std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+        } else {
+            isPlaying = false;
+        }
+    }
+}
+
+void AudioPlayer::ResumeSound() {
+    if (!isPlaying && stream) {
+        PaError err = Pa_StartStream(stream);
+        if (err != paNoError) {
+            std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+        } else {
+            isPlaying = true;
+        }
     }
 }
 
 void AudioPlayer::StopSound() {
-    PaError err = Pa_StopStream(stream);
-    if (err != paNoError) {
-        std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+    if (stream) {
+        PaError err = Pa_StopStream(stream);
+        if (err != paNoError) {
+            std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
+        }
+        Pa_CloseStream(stream);
+        sf_close(sndFile);
+
+        delete[] buffer;
+        buffer = nullptr;
+        sndFile = nullptr;
+        stream = nullptr;
+        isPlaying = false;
     }
-
-    Pa_CloseStream(stream);
-    sf_close(sndFile);
-
-    delete[] buffer; // Clean up the buffer
-    buffer = nullptr;
-    sndFile = nullptr;
-    stream = nullptr;
 }
 
 void AudioPlayer::ManageBuffer() {

@@ -47,6 +47,8 @@ MainWindow::MainWindow() {
     loadSongs("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
 
     connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
+    connect(playerControls, &PlayerControls::PauseRequested, audioPlayer, &AudioPlayer::PauseSound);
+
 }
 
 
@@ -114,9 +116,9 @@ void MainWindow::Menus(){
 }
 
 void MainWindow::Toolbars() {
-     /*
-      * Here we will have the UI for the Toolbars such as skip, play, pause, etc.
-      */
+    /*
+     * Here we will have the UI for the Toolbars such as skip, play, pause, etc.
+     */
 
     // Creating instances of the buttons
     QPushButton *backwardsButton = new QPushButton(this);
@@ -172,8 +174,8 @@ void MainWindow::Toolbars() {
     backwardsButton->setCursor(Qt::PointingHandCursor);
 
     connect(playButton, &QPushButton::clicked, playerControls, &PlayerControls::Play);
+    connect(pauseButton, &QPushButton::clicked, playerControls, &PlayerControls::Pause);
 }
-
 
 void MainWindow::StatusBar() {
     /*

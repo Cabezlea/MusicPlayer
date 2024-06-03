@@ -1,10 +1,5 @@
-//
-// Created by User on 5/6/24.
-//
-
 #ifndef UNTITLED_AUDIOPLAYER_H
 #define UNTITLED_AUDIOPLAYER_H
-
 
 #include <QObject>
 #include "portaudio.h"
@@ -21,8 +16,9 @@ public:
     void OpenFiles(const std::string &filePath);
     void PlaySound();
     void StopSound();
+    void PauseSound();
+    void ResumeSound();
     void ManageBuffer();
-    void PlayBack();
     void LoadSongsFromDirectory(const std::string &directoryPath);
     void PlayNextSong();
 
@@ -33,6 +29,7 @@ private:
     float *buffer;
     std::vector<std::string> songList;
     int currentSongIndex;
+    bool isPlaying;
     static int audioCallback(const void *input, void *output, unsigned long frameCount,
                              const PaStreamCallbackTimeInfo *timeInfo, PaStreamCallbackFlags statusFlags,
                              void *userData);
@@ -42,6 +39,4 @@ signals:
     void PlaybackFinished();
 };
 
-
-
-#endif //UNTITLED_AUDIOPLAYER_H
+#endif // UNTITLED_AUDIOPLAYER_H
