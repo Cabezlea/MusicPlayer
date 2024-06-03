@@ -21,6 +21,7 @@ public:
     void ManageBuffer();
     void LoadSongsFromDirectory(const std::string &directoryPath);
     void PlayNextSong();
+    void RewindSong();
 
 private:
     PaStream *stream;

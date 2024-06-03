@@ -153,3 +153,16 @@ void AudioPlayer::PlayNextSong() {
     currentSongIndex++;
     PlaySound();
 }
+
+void AudioPlayer::RewindSong() {
+
+    //Check if we are at the first song, if so we wrap around to the last song
+    if (currentSongIndex == 0){
+        currentSongIndex = songList.size() - 1;
+    }
+    else {
+        currentSongIndex--;
+    }
+
+    PlaySound();
+}

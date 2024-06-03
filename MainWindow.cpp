@@ -46,11 +46,13 @@ MainWindow::MainWindow() {
     update(); // Re-draws anything if needed, used as a preventive
     loadSongs("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
 
+    //When "playerControls" emits "PlayRequested", it triggers "PlaySound" in "audioPlayer"
     connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
     connect(playerControls, &PlayerControls::PauseRequested, audioPlayer, &AudioPlayer::PauseSound);
+    connect(playerControls, &PlayerControls::NextRequested, audioPlayer, &AudioPlayer::PlayNextSong);
+    connect(playerControls, &PlayerControls::PreviousRequested, audioPlayer, &AudioPlayer::RewindSong);
 
 }
-
 
 void MainWindow::loadSongs(const QString &directoryPath) {
     QDir dir(directoryPath);
@@ -173,8 +175,11 @@ void MainWindow::Toolbars() {
                                    "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
     backwardsButton->setCursor(Qt::PointingHandCursor);
 
+    //Here connections are between the UI elements (buttons) and functions in playerControls
     connect(playButton, &QPushButton::clicked, playerControls, &PlayerControls::Play);
     connect(pauseButton, &QPushButton::clicked, playerControls, &PlayerControls::Pause);
+    connect(skipButton, &QPushButton::clicked, playerControls, &PlayerControls::Next);
+    connect(backwardsButton, &QPushButton::clicked, playerControls, &PlayerControls::Previous);
 }
 
 void MainWindow::StatusBar() {
