@@ -172,8 +172,8 @@ untitled: CMakeFiles/untitled.dir/PlayerControls.cpp.o
 untitled: CMakeFiles/untitled.dir/PlaylistManager.cpp.o
 untitled: CMakeFiles/untitled.dir/AudioPlayer.cpp.o
 untitled: CMakeFiles/untitled.dir/build.make
-untitled: portaudio/libportaudio.dylib
 untitled: /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Versions/A/QtWidgets
+untitled: portaudio/libportaudio.dylib
 untitled: /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Versions/A/QtGui
 untitled: /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Versions/A/QtCore
 untitled: CMakeFiles/untitled.dir/link.txt

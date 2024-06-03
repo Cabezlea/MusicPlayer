@@ -1993,6 +1993,9 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
+ mdp:/opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h
+ mdp:/opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h
+ mdp:/opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h
 /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/AudioPlayer.h
  mmc:Q_OBJECT
  mdp:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h
@@ -2938,3 +2941,6 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h
+ mdp:/opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h
+ mdp:/opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h
+ mdp:/opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h

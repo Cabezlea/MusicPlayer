@@ -1207,4 +1207,6 @@ untitled_autogen/timestamp: \
 	/Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicToolHelpers.cmake \
 	/Users/user/Qt/6.7.0/macos/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake \
 	/opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h \
+	/opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h \
+	/opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h \
 	/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake

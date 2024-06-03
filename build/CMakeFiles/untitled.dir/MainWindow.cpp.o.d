@@ -1060,6 +1060,9 @@ CMakeFiles/untitled.dir/MainWindow.cpp.o: \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/AudioPlayer.h \
   /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/QObject \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h \
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlayerControls.h \
   /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/QPushButton \
   /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/qpushbutton.h \
@@ -1085,4 +1088,36 @@ CMakeFiles/untitled.dir/MainWindow.cpp.o: \
   /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/qboxlayout.h \
   /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/qlayout.h \
   /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/qlayoutitem.h \
-  /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/qgridlayout.h
+  /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers/qgridlayout.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/QDir \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qdir.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qfile.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qfiledevice.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iomanip \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/istream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/ostream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/bitset \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qfileinfo.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qdatetime.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qcalendar.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qlocale.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qtimezone.h \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/QFileInfoList \
+  /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/QStringList

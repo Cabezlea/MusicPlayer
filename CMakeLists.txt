@@ -27,6 +27,10 @@ include_directories(/opt/homebrew/Cellar/libsndfile/1.2.2/include)
 # Add the library directory for libsndfile where we find the library
 link_directories(/opt/homebrew/Cellar/libsndfile/1.2.2/lib)
 
+#Include the directory for mpg123 to decode mp3 files
+include_directories(/opt/homebrew/Cellar/mpg123/1.32.6/include)
+link_directories(/opt/homebrew/Cellar/mpg123/1.32.6/lib)
+
 
 add_executable(untitled main.cpp
         MainWindow.cpp
@@ -44,4 +48,5 @@ target_link_libraries(untitled
         Qt::Widgets
         portaudio
         sndfile
+        mpg123
 )

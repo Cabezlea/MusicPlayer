@@ -1011,6 +1011,9 @@ CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__chrono/year_month_weekday.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__chrono/literals.h \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h \
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h \
   /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/qtmochelpers.h \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/untitled_autogen/EWIEGA46WW/moc_MainWindow.cpp \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/untitled_autogen/EWIEGA46WW/../../../MainWindow.h \

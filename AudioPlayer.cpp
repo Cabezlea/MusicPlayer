@@ -1,18 +1,24 @@
 #include "AudioPlayer.h"
 #include "portaudio.h"
 #include "sndfile.h"
+#include "mpg123.h"
 #include <iostream>
 #include <filesystem>
 
 AudioPlayer::AudioPlayer(QObject *parent)
-        : QObject(parent), stream(nullptr), sndFile(nullptr), buffer(nullptr),
+        : QObject(parent), stream(nullptr), sndFile(nullptr), m_mpg123_handle(nullptr), buffer(nullptr),
           currentSongIndex(0), isPlaying(false) {
+    // Initialize PortAudio
     PaError err = Pa_Initialize();
     if (err != paNoError) {
         std::cerr << "PortAudio error: " << Pa_GetErrorText(err) << std::endl;
     }
 
-    // Load songs from a specified directory
+    // Initialize mpg123 for MP3 support
+    mpg123_init();
+    m_mpg123_handle = mpg123_new(NULL, NULL);
+
+    // Load songs from the specified directory
     LoadSongsFromDirectory("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
 }
 
@@ -21,14 +27,20 @@ AudioPlayer::~AudioPlayer() {
         Pa_StopStream(stream);
         Pa_CloseStream(stream);
     }
+    if (m_mpg123_handle) {
+        mpg123_close(m_mpg123_handle);
+        mpg123_delete(m_mpg123_handle);
+        mpg123_exit();
+    }
     Pa_Terminate();
     delete[] buffer;
 }
 
+
 void AudioPlayer::LoadSongsFromDirectory(const std::string &directoryPath) {
     std::cout << "Loading songs from directory: " << directoryPath << std::endl;
     for (const auto &entry : std::filesystem::directory_iterator(directoryPath)) {
-        if (entry.path().extension() == ".m4a" || entry.path().extension() == ".wav") {
+        if (entry.path().extension() == ".m4a" || entry.path().extension() == ".wav" || entry.path().extension() == ".mp3") {
             songList.push_back(entry.path().string());
             std::cout << "Loaded: " << entry.path().string() << std::endl;
         }
@@ -158,11 +170,11 @@ void AudioPlayer::RewindSong() {
 
     //Check if we are at the first song, if so we wrap around to the last song
     if (currentSongIndex == 0){
-        currentSongIndex = songList.size() - 1;
+        currentSongIndex = songList.size() - 1; //If first song, it moves to the last song
     }
     else {
-        currentSongIndex--;
+        currentSongIndex--; //Else we decrement and go back to the previous song
     }
 
-    PlaySound();
+    PlaySound(); //Implementation of the PlaySound method
 }

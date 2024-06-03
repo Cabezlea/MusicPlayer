@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include -I/opt/homebrew/Cellar/libsndfile/1.2.2/include -isystem /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/untitled_autogen/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers -iframework /Users/user/Qt/6.7.0/macOS/lib -isystem /Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang -isystem /Users/user/Qt/6.7.0/macOS/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Headers -isystem /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers
+CXX_INCLUDES = -I/opt/homebrew/Cellar/libsndfile/1.2.2/include -I/opt/homebrew/Cellar/mpg123/1.32.6/include -I/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include -isystem /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/build/untitled_autogen/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers -iframework /Users/user/Qt/6.7.0/macOS/lib -isystem /Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang -isystem /Users/user/Qt/6.7.0/macOS/include -isystem /Users/user/Qt/6.7.0/macOS/lib/QtGui.framework/Headers -isystem /Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4
 

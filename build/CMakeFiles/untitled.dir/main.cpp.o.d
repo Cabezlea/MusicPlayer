@@ -1076,4 +1076,7 @@ CMakeFiles/untitled.dir/main.cpp.o: \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/AudioPlayer.h \
   /Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers/QObject \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h \
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlayerControls.h
