@@ -8,6 +8,7 @@
 #include <QWidget>
 #include "AudioPlayer.h"
 #include "PlayerControls.h"
+#include <QPixmap>
 
 class MainWindow : public QWidget {
 
@@ -21,11 +22,14 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 public:
+    QPixmap songImage;
     MainWindow(); //Constructor for the class
     void Menus(); // methods for the class
     void Toolbars();
     void StatusBar();
     void loadSongs(const QString &directoryPath);
+    void loadAlbumArt();
+    QImage extractAlbumArt(const QString& filePath);
 };
 
 

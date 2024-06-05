@@ -297,6 +297,8 @@
 	[
 		"/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include",
 		"/opt/homebrew/Cellar/libsndfile/1.2.2/include",
+		"/opt/homebrew/Cellar/mpg123/1.32.6/include",
+		"/opt/homebrew/Cellar/taglib/1.13.1/include/taglib",
 		"/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework/Headers",
 		"/Users/user/Qt/6.7.0/macOS/lib/QtCore.framework",
 		"/Users/user/Qt/6.7.0/macOS/mkspecs/macx-clang",

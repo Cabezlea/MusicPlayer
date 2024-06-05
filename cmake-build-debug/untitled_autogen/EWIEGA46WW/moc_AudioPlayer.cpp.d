@@ -941,4 +941,6 @@
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
-  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h
+  /opt/homebrew/Cellar/libsndfile/1.2.2/include/sndfile.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/fmt123.h \
+  /opt/homebrew/Cellar/mpg123/1.32.6/include/mpg123.h

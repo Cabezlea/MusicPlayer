@@ -31,6 +31,10 @@ link_directories(/opt/homebrew/Cellar/libsndfile/1.2.2/lib)
 include_directories(/opt/homebrew/Cellar/mpg123/1.32.6/include)
 link_directories(/opt/homebrew/Cellar/mpg123/1.32.6/lib)
 
+#Include the directory for taglib to extract metadata and album cover
+include_directories(/opt/homebrew/Cellar/taglib/1.13.1/include/taglib)
+link_directories(/opt/homebrew/Cellar/taglib/1.13.1/lib)
+
 
 add_executable(untitled main.cpp
         MainWindow.cpp
@@ -49,4 +53,5 @@ target_link_libraries(untitled
         portaudio
         sndfile
         mpg123
+        tag
 )
