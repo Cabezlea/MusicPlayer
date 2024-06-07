@@ -1056,6 +1056,43 @@
 			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake"
 		},
 		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessTargets.cmake"
+		},
+		{
 			"path" : "portaudio/CMakeLists.txt"
 		},
 		{

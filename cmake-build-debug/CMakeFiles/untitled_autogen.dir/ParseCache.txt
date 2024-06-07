@@ -1846,6 +1846,7 @@
  mdp:/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/moc_predefs.h
  mdp:/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QObject
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QProcess
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h
@@ -1890,6 +1891,7 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qhash.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevice.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterable.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterator.h
@@ -1913,6 +1915,7 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qoverload.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qpair.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qpoint.h
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qprocess.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qprocessordetection.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qrect.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qrefcount.h

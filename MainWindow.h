@@ -9,6 +9,7 @@
 #include "AudioPlayer.h"
 #include "PlayerControls.h"
 #include <QPixmap>
+#include <QProcess>
 
 class MainWindow : public QWidget {
 
@@ -29,7 +30,6 @@ public:
     void StatusBar();
     void loadSongs(const QString &directoryPath);
     void loadAlbumArt();
-    QImage extractAlbumArt(const QString& filePath);
 };
 
 

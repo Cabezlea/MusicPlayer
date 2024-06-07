@@ -13,6 +13,7 @@ find_package(Qt6 COMPONENTS
         Core
         Gui
         Widgets
+        Concurrent
         REQUIRED)
 
 # Add the portAudio subdirectory
@@ -50,6 +51,7 @@ target_link_libraries(untitled
         Qt::Core
         Qt::Gui
         Qt::Widgets
+        Qt::Concurrent
         portaudio
         sndfile
         mpg123

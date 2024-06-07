@@ -6090,6 +6090,18 @@
 			"value" : "OFF"
 		},
 		{
+			"name" : "Qt6Concurrent_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Qt6Concurrent."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent"
+		},
+		{
 			"name" : "Qt6CoreTools_DIR",
 			"properties" : 
 			[

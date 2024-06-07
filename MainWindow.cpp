@@ -3,8 +3,6 @@
 #include "PlayerControls.h"
 #include "AudioPlayer.h"
 #include "taglib.h"
-#include "id3v2tag.h"   //Metadata format to store song title, artist, and others. To retrieve the Metadata
-#include "id3v2frame.h" //Manipulate and access the frames of the other tag
 #include <QPushButton>
 #include <QSlider>
 #include <QLabel>
@@ -16,8 +14,6 @@
 #include <QDir>
 #include <QFileInfoList>
 #include <QStringList>
-#include <fileref.h>
-#include <attachedpictureframe.h>
 
 
 MainWindow::MainWindow() {
@@ -52,12 +48,33 @@ MainWindow::MainWindow() {
     loadSongs("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
 
 
+
     //When "playerControls" emits "PlayRequested", it triggers "PlaySound" in "audioPlayer"
     connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
     connect(playerControls, &PlayerControls::PauseRequested, audioPlayer, &AudioPlayer::PauseSound);
     connect(playerControls, &PlayerControls::NextRequested, audioPlayer, &AudioPlayer::PlayNextSong);
     connect(playerControls, &PlayerControls::PreviousRequested, audioPlayer, &AudioPlayer::RewindSong);
 
+}
+
+void MainWindow::loadAlbumArt() {
+    QString songPath = audioPlayer->getCurrentSongPath();
+    if (songPath.isEmpty()) {
+        qDebug() << "No song path found.";
+        return;
+    }
+
+    QProcess process;
+    process.start("ffmpeg", QStringList() << "-i" << songPath << "-an" << "-vcodec" << "copy" << "/tmp/album_art.jpg");
+    process.waitForFinished(); // Waits indefinitely until finished
+
+    QImage albumArt;
+    if (albumArt.load("/tmp/album_art.jpg")) {
+        songImage = QPixmap::fromImage(albumArt);
+        update(); // Trigger a repaint to show the new album art
+    } else {
+        qDebug() << "Failed to load album art from path: /tmp/album_art.jpg";
+    }
 }
 
 void MainWindow::loadSongs(const QString &directoryPath) {
@@ -73,189 +90,140 @@ void MainWindow::loadSongs(const QString &directoryPath) {
     }
 
             foreach(QFileInfo fileInfo, fileList) {
-            //Implementation of the album cover where we will pass the song directory
 
             audioPlayer->OpenFiles(fileInfo.absoluteFilePath().toStdString());
-            break; // Load the first song for now
         }
-}
-//Method to load album art specified with the path to the file
-void MainWindow::loadAlbumArt() {
-    QImage albumArt = extractAlbumArt("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs/02 Raven (Mixed).mp3");
-    if(!albumArt.isNull()){
-        songImage = QPixmap::fromImage(albumArt);
-    }
-}
-
-//Extract images from the album cover
-QImage MainWindow::extractAlbumArt(const QString &filePath) {
-    // Create a QImage object where we will store the image data
-    QImage image;
-
-    //Open the mp3 file using taglib, use Utf8 since that is what TagLib expects (enconded strings)
-    //constData(0 is a function that returns a pointer to the data of a QString, required by FileRef
-    TagLib::FileRef file(filePath.toUtf8().constData());
-
-    //Get the ID3v2 Tag
-    TagLib::ID3v2::Tag *tag = dynamic_cast<TagLib::ID3v2::Tag *>(file.tag());
-
-    //Access the album art frame
-    TagLib::ID3v2::FrameList frameList = tag->frameList("APIC");
-
-    //Check if the album frame exists
-    if (!frameList.isEmpty()) {
-        TagLib::ID3v2::AttachedPictureFrame *picFrame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(frameList.front());
-
-        // Check if the frame is valid
-        if (picFrame) {
-            // Extract the image data for which we use an object of type TagLib
-            TagLib::ByteVector imageData = picFrame->picture();
-
-            // Create a QImage object from the image data
-            // Note: loadFromData returns true if successful, false otherwise
-            if (image.loadFromData((const uchar *) imageData.data(), imageData.size())) {
-                // Return the QImage object if successfully loaded
-                return image;
-            }
-
-        }
-    }
-    return image;
+    loadAlbumArt();
 }
 
 //The argument is the QPaintEvent object, which provides info about the region painted
-    void MainWindow::paintEvent(QPaintEvent *event) {
-        int h = 45;
-        QPainter painter(this);
-        int halfWidth = this->width() / 2;
-        int height = this->height() - h;
+void MainWindow::paintEvent(QPaintEvent *event) {
+    int h = 45;
+    QPainter painter(this);
+    int halfWidth = this->width() / 2;
+    int height = this->height() - h;
 
-        QRect rectangleFirstPortion(0, height, halfWidth, h);// Color left side of rectangle
-        QBrush rectangleFirstColor(Qt::black); //Define the color of the rectangle
+    QRect rectangleFirstPortion(0, height, halfWidth, h);// Color left side of rectangle
+    QBrush rectangleFirstColor(Qt::black); //Define the color of the rectangle
 
-        QRect rectangleSecondPortion(halfWidth, height, width(), h); //Color right side of rectangle
-        QBrush rectangleSecondColor(Qt::white);
+    QRect rectangleSecondPortion(halfWidth, height, width(), h); //Color right side of rectangle
+    QBrush rectangleSecondColor(Qt::white);
 
-        painter.fillRect(rectangleFirstPortion,
-                         rectangleFirstColor); // Paint the rectangle portion with the rectangle color
-        painter.fillRect(rectangleSecondPortion, rectangleSecondColor); // Paint second portion
-
-
-
-        int boxHeightWindow = this->height() - 530; //Where the text will be placed in screen
-        int leftStart = 450; // Text starts 25px from the left side of the screen
-        int imageStart = 25; //What points in the screen the image will be placed (horizontal)
-        int heightOfText = 50; // Height of the text box
-        int heightOfSong = 275;
-        float boxWidth = 2.45;
-
-        QString boxText = "Name of Song";
-
-        QRect rectangleSong(leftStart, boxHeightWindow, width() / boxWidth, heightOfText);
-        QRect songImageBox(imageStart, boxHeightWindow, width() / boxWidth, heightOfSong);
-
-        painter.drawText(rectangleSong, Qt::AlignCenter, boxText);
-
-        //QImage for the album cover
-        //QImage albumArt = extractAlbumArt("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
-        //Convert the QImage to QPixmap
-        //Placeholder we had for the image when setting the UI
-        QPixmap songImage("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Oppenheimer.png");
-        painter.drawPixmap(songImageBox, songImage);
-
-    }
+    painter.fillRect(rectangleFirstPortion,
+                     rectangleFirstColor); // Paint the rectangle portion with the rectangle color
+    painter.fillRect(rectangleSecondPortion, rectangleSecondColor); // Paint second portion
 
 
-    void MainWindow::Menus() {
-        /*
-         * Here we will have UI for the menu such as song image and title of song
-         */
-    }
 
-    void MainWindow::Toolbars() {
-        /*
-         * Here we will have the UI for the Toolbars such as skip, play, pause, etc.
-         */
+    int boxHeightWindow = this->height() - 530; //Where the text will be placed in screen
+    int leftStart = 450; // Text starts 25px from the left side of the screen
+    int imageStart = 25; //What points in the screen the image will be placed (horizontal)
+    int heightOfText = 50; // Height of the text box
+    int heightOfSong = 275;
+    float boxWidth = 2.45;
 
-        // Creating instances of the buttons
-        QPushButton *backwardsButton = new QPushButton(this);
-        QPushButton *playButton = new QPushButton(this);
-        QPushButton *pauseButton = new QPushButton(this);
-        QPushButton *skipButton = new QPushButton(this);
+    QString boxText = "Name of Song";
 
-        // Setting the icons for each button
-        backwardsButton->setIcon(
-                QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Rewind.png"));
-        playButton->setIcon(
-                QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Play-button.png"));
-        pauseButton->setIcon(
-                QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Pause.png"));
-        skipButton->setIcon(
-                QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/FastForward.png"));
+    QRect rectangleSong(leftStart, boxHeightWindow, width() / boxWidth, heightOfText);
+    QRect songImageBox(imageStart, boxHeightWindow, width() / boxWidth, heightOfSong);
 
-        // Set fixed sizes for each button
-        int buttonWidth = 120; //55
-        int buttonHeight = 50; //35
-        int startX = 150; // Starting x-coordinate for the first button
-        int startY = 390; // y-coordinate for all buttons
+    painter.drawText(rectangleSong, Qt::AlignCenter, boxText);
 
-        // Positioning each button in the desired order: Backwards, Play, Pause, Skip
-        // Next button is calculated by startX + buttonWidth + spacing
-        backwardsButton->setGeometry(startX, startY, buttonWidth, buttonHeight);
-        playButton->setGeometry(startX + buttonWidth + 5, startY, buttonWidth,
-                                buttonHeight); //5 Pixels to the right and one button width
-        pauseButton->setGeometry(startX + 2 * (buttonWidth + 5), startY, buttonWidth,
-                                 buttonHeight); //Two button widths and 2 spaces before we are stacking 2 buttons and 2 spaces before this button
-        skipButton->setGeometry(startX + 3 * (buttonWidth + 5), startY, buttonWidth,
-                                buttonHeight); //3 buttonWidths and 3 spaces to start x
+    painter.drawPixmap(songImageBox, songImage);
 
-        //New Size for icons
-        QSize iconSize(75, 45);
-        backwardsButton->setIconSize(iconSize);
-        playButton->setIconSize(iconSize);
-        pauseButton->setIconSize(iconSize);
-        skipButton->setIconSize(iconSize);
+}
 
-        //use setStyleSheet to remove the background from each button
-        playButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
-                                  "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
-                                  "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
-        playButton->setCursor(Qt::PointingHandCursor);
 
-        pauseButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+void MainWindow::Menus() {
+    /*
+     * Here we will have UI for the menu such as song image and title of song
+     */
+}
+
+void MainWindow::Toolbars() {
+    /*
+     * Here we will have the UI for the Toolbars such as skip, play, pause, etc.
+     */
+
+    // Creating instances of the buttons
+    QPushButton *backwardsButton = new QPushButton(this);
+    QPushButton *playButton = new QPushButton(this);
+    QPushButton *pauseButton = new QPushButton(this);
+    QPushButton *skipButton = new QPushButton(this);
+
+    // Setting the icons for each button
+    backwardsButton->setIcon(
+            QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Rewind.png"));
+    playButton->setIcon(
+            QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Play-button.png"));
+    pauseButton->setIcon(
+            QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/Pause.png"));
+    skipButton->setIcon(
+            QIcon("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Images/FastForward.png"));
+
+    // Set fixed sizes for each button
+    int buttonWidth = 120; //55
+    int buttonHeight = 50; //35
+    int startX = 150; // Starting x-coordinate for the first button
+    int startY = 390; // y-coordinate for all buttons
+
+    // Positioning each button in the desired order: Backwards, Play, Pause, Skip
+    // Next button is calculated by startX + buttonWidth + spacing
+    backwardsButton->setGeometry(startX, startY, buttonWidth, buttonHeight);
+    playButton->setGeometry(startX + buttonWidth + 5, startY, buttonWidth,
+                            buttonHeight); //5 Pixels to the right and one button width
+    pauseButton->setGeometry(startX + 2 * (buttonWidth + 5), startY, buttonWidth,
+                             buttonHeight); //Two button widths and 2 spaces before we are stacking 2 buttons and 2 spaces before this button
+    skipButton->setGeometry(startX + 3 * (buttonWidth + 5), startY, buttonWidth,
+                            buttonHeight); //3 buttonWidths and 3 spaces to start x
+
+    //New Size for icons
+    QSize iconSize(75, 45);
+    backwardsButton->setIconSize(iconSize);
+    playButton->setIconSize(iconSize);
+    pauseButton->setIconSize(iconSize);
+    skipButton->setIconSize(iconSize);
+
+    //use setStyleSheet to remove the background from each button
+    playButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                              "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                              "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
+    playButton->setCursor(Qt::PointingHandCursor);
+
+    pauseButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                               "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                               "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
+    pauseButton->setCursor(Qt::PointingHandCursor);
+
+    skipButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
+                              "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
+                              "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
+    skipButton->setCursor(Qt::PointingHandCursor);
+
+    backwardsButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
                                    "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
                                    "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
-        pauseButton->setCursor(Qt::PointingHandCursor);
+    backwardsButton->setCursor(Qt::PointingHandCursor);
 
-        skipButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
-                                  "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
-                                  "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
-        skipButton->setCursor(Qt::PointingHandCursor);
+    //Here connections are between the UI elements (buttons) and functions in playerControls
+    connect(playButton, &QPushButton::clicked, playerControls, &PlayerControls::Play);
+    connect(pauseButton, &QPushButton::clicked, playerControls, &PlayerControls::Pause);
+    connect(skipButton, &QPushButton::clicked, playerControls, &PlayerControls::Next);
+    connect(backwardsButton, &QPushButton::clicked, playerControls, &PlayerControls::Previous);
+}
 
-        backwardsButton->setStyleSheet("QPushButton { border: none; background-color: transparent; }"
-                                       "QPushButton:hover { cursor: pointer; background-color: rgba(255, 255, 255, 0.1); }"
-                                       "QPushButton:pressed { background-color: rgba(255, 255, 255, 0.2); }");
-        backwardsButton->setCursor(Qt::PointingHandCursor);
+void MainWindow::StatusBar() {
+    /*
+     * In this method we will create the UI for the song status bar and the bar to adjust the volume
+     */
+    QSlider *songStatusBar = new QSlider(Qt::Horizontal, this);
+    songStatusBar->setRange(0, 100); //Range of song
+    songStatusBar->setValue(80); //Initial value
+    songStatusBar->setGeometry(470, 170, 275, 20);
 
-        //Here connections are between the UI elements (buttons) and functions in playerControls
-        connect(playButton, &QPushButton::clicked, playerControls, &PlayerControls::Play);
-        connect(pauseButton, &QPushButton::clicked, playerControls, &PlayerControls::Pause);
-        connect(skipButton, &QPushButton::clicked, playerControls, &PlayerControls::Next);
-        connect(backwardsButton, &QPushButton::clicked, playerControls, &PlayerControls::Previous);
-    }
+    //Now we will create the volume bar in here to adjust it
 
-    void MainWindow::StatusBar() {
-        /*
-         * In this method we will create the UI for the song status bar and the bar to adjust the volume
-         */
-        QSlider *songStatusBar = new QSlider(Qt::Horizontal, this);
-        songStatusBar->setRange(0, 100); //Range of song
-        songStatusBar->setValue(80); //Initial value
-        songStatusBar->setGeometry(470, 170, 275, 20);
-
-        //Now we will create the volume bar in here to adjust it
-
-        songStatusBar->setStyleSheet(R"(
+    songStatusBar->setStyleSheet(R"(
         QSlider::groove:horizontal {
             border: 1px solid #b1b1b1;
             background: #f3f3f3;
@@ -280,20 +248,19 @@ QImage MainWindow::extractAlbumArt(const QString &filePath) {
         }
     )");
 
-        // Labels for the start and end times
-        QLabel *startLabel = new QLabel("0:00", this);
-        QLabel *endLabel = new QLabel("4:30", this);
+    // Labels for the start and end times
+    QLabel *startLabel = new QLabel("0:00", this);
+    QLabel *endLabel = new QLabel("4:30", this);
 
-        startLabel->setGeometry(470, 150, 40, 20); // Adjust position to line up with the start of the slider
-        endLabel->setGeometry(715, 150, 40, 20); // Adjust position to line up with the end of the slider
+    startLabel->setGeometry(470, 150, 40, 20); // Adjust position to line up with the start of the slider
+    endLabel->setGeometry(715, 150, 40, 20); // Adjust position to line up with the end of the slider
 
-        startLabel->show();
-        endLabel->show();
-        songStatusBar->show();
+    startLabel->show();
+    endLabel->show();
+    songStatusBar->show();
 
-        QSlider *volumeSlider = new QSlider(Qt::Horizontal, this);
-        volumeSlider->setRange(0, 100); //Range of song
-        volumeSlider->setValue(50); //Initial value
-        volumeSlider->setGeometry(470, 320, 275, 20);
-    }
-
+    QSlider *volumeSlider = new QSlider(Qt::Horizontal, this);
+    volumeSlider->setRange(0, 100); //Range of song
+    volumeSlider->setValue(50); //Initial value
+    volumeSlider->setGeometry(470, 320, 275, 20);
+}

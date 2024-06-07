@@ -845,6 +845,7 @@
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/PlayerControls.h \
   /Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QObject \
+  /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QProcess \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h \
@@ -889,6 +890,7 @@
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qglobalstatic.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qhash.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qhashfunctions.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevice.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiodevicebase.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterable.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qiterator.h \
@@ -912,6 +914,7 @@
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qoverload.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qpair.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qpoint.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qprocess.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qprocessordetection.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qrect.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qrefcount.h \

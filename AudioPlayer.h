@@ -24,6 +24,8 @@ public:
     void PlayNextSong();
     void RewindSong();
     void ManageBuffer();
+    QString getCurrentSongPath() const;  // To get the path of the current playing song
+
 
 private:
     PaStream *stream;

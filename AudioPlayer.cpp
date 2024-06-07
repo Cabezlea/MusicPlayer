@@ -178,3 +178,9 @@ void AudioPlayer::RewindSong() {
 
     PlaySound(); //Implementation of the PlaySound method
 }
+
+QString AudioPlayer::getCurrentSongPath() const {
+    if (currentSongIndex < songList.size())
+        return QString::fromStdString(songList[currentSongIndex]);
+    return QString();
+}

@@ -250,7 +250,16 @@
 		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
 		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets.cmake",
 		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Widgets/Qt6QMacStylePluginTargets-relwithdebinfo.cmake",
-		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake"
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Widgets/Qt6QMacStylePluginAdditionalTargetInfo.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake",
+		"/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake",
+		"/Users/user/Qt/6.7.0/macOS/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessTargets.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer",
 	"DEP_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/deps",
@@ -285,7 +294,7 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/include",
 	"MOC_COMPILATION_FILE" : "/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CONCURRENT_LIB", "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -307,6 +316,8 @@
 		"/Users/user/Qt/6.7.0/macOS/lib/QtGui.framework",
 		"/Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework/Headers",
 		"/Users/user/Qt/6.7.0/macOS/lib/QtWidgets.framework",
+		"/Users/user/Qt/6.7.0/macOS/lib/QtConcurrent.framework/Headers",
+		"/Users/user/Qt/6.7.0/macOS/lib/QtConcurrent.framework",
 		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1",
 		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include",
 		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include",
