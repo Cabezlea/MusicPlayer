@@ -14,6 +14,7 @@
 #include <QDir>
 #include <QFileInfoList>
 #include <QStringList>
+#include <QRegularExpression>
 
 
 MainWindow::MainWindow() {
@@ -64,20 +65,30 @@ void MainWindow::loadAlbumArt() {
         return;
     }
 
-    QProcess *process = new QProcess(this); // Make QProcess a child of this object to handle cleanup
-    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            [this, process](int exitCode, QProcess::ExitStatus exitStatus) {
-                QImage albumArt;
-                if (albumArt.load("/tmp/album_art.jpg")) {
-                    songImage = QPixmap::fromImage(albumArt);
-                    update(); // Trigger a repaint to show the new album art
-                } else {
-                    qDebug() << "Failed to load album art from path: /tmp/album_art.jpg";
-                }
-                process->deleteLater(); // Cleanup the process after it's finished
-            });
+    // Temporary path for the extracted album art
+    QString tempImagePath = "/tmp/album_art.jpg";
 
-    process->start("ffmpeg", QStringList() << "-i" << songPath << "-an" << "-vframes" << "1" << "-f" << "singlejpeg" << "/tmp/album_art.jpg");
+    // Start a QProcess to run ffmpeg to extract the album art
+    QProcess *process = new QProcess(this);
+    process->start("ffmpeg", QStringList() << "-y" << "-i" << songPath << "-an" << "-vcodec" << "copy" << "-f" << "mjpeg" << tempImagePath);
+
+    // Using a lambda to handle the process completion
+    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            [this, process, tempImagePath](int exitCode, QProcess::ExitStatus exitStatus) {
+                if (exitStatus == QProcess::NormalExit && exitCode == 0) {
+                    QImage albumArt;
+                    if (albumArt.load(tempImagePath)) {
+                        songImage = QPixmap::fromImage(albumArt);
+                        update(); // Refresh the UI to display the new album art
+                    } else {
+                        qDebug() << "Failed to load album art from path:" << tempImagePath;
+                    }
+                } else {
+                    qDebug() << "FFmpeg failed to extract album art, error:" << process->errorString();
+                }
+                process->deleteLater(); // Clean up the process
+                QFile::remove(tempImagePath); // Optionally remove the temp file
+            });
 }
 
 void MainWindow::loadSongs(const QString &directoryPath) {
