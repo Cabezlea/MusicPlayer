@@ -164,6 +164,7 @@ int AudioPlayer::audioCallback(const void *input, void *output, unsigned long fr
 void AudioPlayer::PlayNextSong() {
     currentSongIndex++;
     PlaySound();
+    emit songChanged();
 }
 
 void AudioPlayer::RewindSong() {

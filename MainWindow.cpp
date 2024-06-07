@@ -51,6 +51,7 @@ MainWindow::MainWindow() {
 
 
     //When "playerControls" emits "PlayRequested", it triggers "PlaySound" in "audioPlayer"
+    connect(audioPlayer, &AudioPlayer::songChanged, this, &MainWindow::loadAlbumArt);
     connect(playerControls, &PlayerControls::PlayRequested, audioPlayer, &AudioPlayer::PlaySound);
     connect(playerControls, &PlayerControls::PauseRequested, audioPlayer, &AudioPlayer::PauseSound);
     connect(playerControls, &PlayerControls::NextRequested, audioPlayer, &AudioPlayer::PlayNextSong);

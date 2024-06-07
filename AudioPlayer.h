@@ -44,5 +44,6 @@ private:
 
 signals:
     void PlaybackFinished();
+    void songChanged();
 };
 #endif // UNTITLED_AUDIOPLAYER_H
