@@ -64,17 +64,20 @@ void MainWindow::loadAlbumArt() {
         return;
     }
 
-    QProcess process;
-    process.start("ffmpeg", QStringList() << "-i" << songPath << "-an" << "-vcodec" << "copy" << "/tmp/album_art.jpg");
-    process.waitForFinished(); // Waits indefinitely until finished
+    QProcess *process = new QProcess(this); // Make QProcess a child of this object to handle cleanup
+    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            [this, process](int exitCode, QProcess::ExitStatus exitStatus) {
+                QImage albumArt;
+                if (albumArt.load("/tmp/album_art.jpg")) {
+                    songImage = QPixmap::fromImage(albumArt);
+                    update(); // Trigger a repaint to show the new album art
+                } else {
+                    qDebug() << "Failed to load album art from path: /tmp/album_art.jpg";
+                }
+                process->deleteLater(); // Cleanup the process after it's finished
+            });
 
-    QImage albumArt;
-    if (albumArt.load("/tmp/album_art.jpg")) {
-        songImage = QPixmap::fromImage(albumArt);
-        update(); // Trigger a repaint to show the new album art
-    } else {
-        qDebug() << "Failed to load album art from path: /tmp/album_art.jpg";
-    }
+    process->start("ffmpeg", QStringList() << "-i" << songPath << "-an" << "-vframes" << "1" << "-f" << "singlejpeg" << "/tmp/album_art.jpg");
 }
 
 void MainWindow::loadSongs(const QString &directoryPath) {
