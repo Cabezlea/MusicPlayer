@@ -7,7 +7,7 @@
 
 AudioPlayer::AudioPlayer(QObject *parent)
         : QObject(parent), stream(nullptr), sndFile(nullptr), m_mpg123_handle(nullptr), buffer(nullptr),
-          currentSongIndex(0), isPlaying(false) {
+          currentSongIndex(0), isPlaying(false), volumeLevel(1.0) {
     // Initialize PortAudio
     PaError err = Pa_Initialize();
     if (err != paNoError) {
@@ -156,7 +156,7 @@ int AudioPlayer::audioCallback(const void *input, void *output, unsigned long fr
     }
 
     for (unsigned long i = 0; i < frameCount * player->sfInfo.channels; i++) {
-        *out++ = player->buffer[i];
+        *out++ = player->buffer[i] * player->volumeLevel;
     }
     return paContinue;
 }
@@ -185,3 +185,7 @@ QString AudioPlayer::getCurrentSongPath() const {
         return QString::fromStdString(songList[currentSongIndex]);
     return QString();
 }
+void AudioPlayer::setVolume(int volume) {
+    volumeLevel = volume / 100.0f; //Convert volume from 0-100 scale to float 0.0 - 1.0
+}
+

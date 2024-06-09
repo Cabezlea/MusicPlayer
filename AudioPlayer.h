@@ -14,7 +14,7 @@ Q_OBJECT
 public:
     explicit AudioPlayer(QObject *parent = nullptr);
     ~AudioPlayer();
-
+    void setVolume(int volume);
     void LoadSongsFromDirectory(const std::string &directoryPath);
     void OpenFiles(const std::string &filePath);
     void PlaySound();
@@ -28,6 +28,7 @@ public:
 
 
 private:
+    float volumeLevel;
     PaStream *stream;
     SNDFILE *sndFile;
     SF_INFO sfInfo;

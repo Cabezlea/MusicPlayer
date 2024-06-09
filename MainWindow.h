@@ -11,6 +11,7 @@
 #include <QPixmap>
 #include <QProcess>
 #include <QLabel>
+#include <QSlider>
 
 class MainWindow : public QWidget {
 
@@ -24,6 +25,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 public:
+    QSlider *volumeSlider;
     QPixmap songImage;
     QLabel *songTitleLabel;
     QLabel *artistLabel;

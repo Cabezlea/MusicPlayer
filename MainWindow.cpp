@@ -58,9 +58,7 @@ MainWindow::MainWindow() {
     connect(playerControls, &PlayerControls::NextRequested, audioPlayer, &AudioPlayer::PlayNextSong);
     connect(playerControls, &PlayerControls::PreviousRequested, audioPlayer, &AudioPlayer::RewindSong);
     connect(audioPlayer, &AudioPlayer::songChanged, this, &MainWindow::loadMetadata);
-
-
-
+    connect(volumeSlider, &QSlider::valueChanged, audioPlayer, &AudioPlayer::setVolume);
 }
 
 void MainWindow::loadAlbumArt() {
@@ -291,6 +289,8 @@ void MainWindow::StatusBar() {
         }
     )");
 
+
+
     // Labels for the start and end times
     QLabel *startLabel = new QLabel("0:00", this);
     QLabel *endLabel = new QLabel("4:30", this);
@@ -302,7 +302,7 @@ void MainWindow::StatusBar() {
     endLabel->show();
     songStatusBar->show();
 
-    QSlider *volumeSlider = new QSlider(Qt::Horizontal, this);
+    volumeSlider = new QSlider(Qt::Horizontal, this);
     volumeSlider->setRange(0, 100); //Range of song
     volumeSlider->setValue(50); //Initial value
     volumeSlider->setGeometry(470, 320, 275, 20);
