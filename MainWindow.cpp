@@ -170,7 +170,7 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     QRect rectangleSong(leftStart, boxHeightWindow, width() / boxWidth, heightOfText);
     QRect songImageBox(imageStart, boxHeightWindow, width() / boxWidth, heightOfSong);
 
-    painter.drawText(rectangleSong, Qt::AlignCenter, currentSongTitle + " - " + currentArtist);
+    painter.drawText(rectangleSong, Qt::AlignCenter, currentSongTitle + "\n" + currentArtist);
 
     painter.drawPixmap(songImageBox, songImage);
 

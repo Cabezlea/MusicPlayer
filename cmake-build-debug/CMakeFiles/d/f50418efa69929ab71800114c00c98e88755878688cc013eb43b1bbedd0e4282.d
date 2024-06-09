@@ -1166,6 +1166,7 @@ untitled_autogen/timestamp: \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtversionchecks.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtypeinfo.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtypes.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qurl.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qvariant.h \
   /Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h \
@@ -1186,18 +1187,23 @@ untitled_autogen/timestamp: \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qpolygon.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qtransform.h \
   /Users/user/Qt/6.7.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
+  /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
+  /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /Users/user/Qt/6.7.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
