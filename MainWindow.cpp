@@ -15,6 +15,7 @@
 #include <QFileInfoList>
 #include <QStringList>
 #include <QRegularExpression>
+#include <fileref.h>
 
 
 MainWindow::MainWindow() {
@@ -56,6 +57,9 @@ MainWindow::MainWindow() {
     connect(playerControls, &PlayerControls::PauseRequested, audioPlayer, &AudioPlayer::PauseSound);
     connect(playerControls, &PlayerControls::NextRequested, audioPlayer, &AudioPlayer::PlayNextSong);
     connect(playerControls, &PlayerControls::PreviousRequested, audioPlayer, &AudioPlayer::RewindSong);
+    connect(audioPlayer, &AudioPlayer::songChanged, this, &MainWindow::loadMetadata);
+
+
 
 }
 
@@ -92,6 +96,32 @@ void MainWindow::loadAlbumArt() {
             });
 }
 
+void MainWindow::loadMetadata() {
+    QString songPath = audioPlayer->getCurrentSongPath();
+    if (songPath.isEmpty()) {
+        qDebug() << "No song path found.";
+        currentSongTitle = "Unknown Title";
+        currentArtist = "Unknown Artist";
+        return;
+    }
+
+    qDebug() << "Loading metadata for:" << songPath;
+
+    TagLib::FileRef f(songPath.toStdString().c_str());
+    if (!f.isNull() && f.tag()) {
+        TagLib::Tag *tag = f.tag();
+        currentSongTitle = QString::fromStdWString(tag->title().toWString()).isEmpty() ? "Unknown Title" : QString::fromStdWString(tag->title().toWString());
+        currentArtist = QString::fromStdWString(tag->artist().toWString()).isEmpty() ? "Unknown Artist" : QString::fromStdWString(tag->artist().toWString());
+        qDebug() << "Extracted Title:" << currentSongTitle;
+        qDebug() << "Extracted Artist:" << currentArtist;
+    } else {
+        currentSongTitle = "Unknown Title";
+        currentArtist = "Unknown Artist";
+        qDebug() << "Failed to load metadata.";
+    }
+    update();  // Force repaint to show new metadata
+}
+
 void MainWindow::loadSongs(const QString &directoryPath) {
     QDir dir(directoryPath);
     QStringList filters;
@@ -109,6 +139,7 @@ void MainWindow::loadSongs(const QString &directoryPath) {
             audioPlayer->OpenFiles(fileInfo.absoluteFilePath().toStdString());
         }
     loadAlbumArt();
+    loadMetadata();
 }
 
 //The argument is the QPaintEvent object, which provides info about the region painted
@@ -124,8 +155,7 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     QRect rectangleSecondPortion(halfWidth, height, width(), h); //Color right side of rectangle
     QBrush rectangleSecondColor(Qt::white);
 
-    painter.fillRect(rectangleFirstPortion,
-                     rectangleFirstColor); // Paint the rectangle portion with the rectangle color
+    painter.fillRect(rectangleFirstPortion,rectangleFirstColor); // Paint the rectangle portion with the rectangle color
     painter.fillRect(rectangleSecondPortion, rectangleSecondColor); // Paint second portion
 
 
@@ -137,12 +167,10 @@ void MainWindow::paintEvent(QPaintEvent *event) {
     int heightOfSong = 275;
     float boxWidth = 2.45;
 
-    QString boxText = "Name of Song";
-
     QRect rectangleSong(leftStart, boxHeightWindow, width() / boxWidth, heightOfText);
     QRect songImageBox(imageStart, boxHeightWindow, width() / boxWidth, heightOfSong);
 
-    painter.drawText(rectangleSong, Qt::AlignCenter, boxText);
+    painter.drawText(rectangleSong, Qt::AlignCenter, currentSongTitle + " - " + currentArtist);
 
     painter.drawPixmap(songImageBox, songImage);
 

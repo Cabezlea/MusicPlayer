@@ -37,7 +37,8 @@ struct qt_meta_stringdata_CLASSAudioPlayerENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSAudioPlayerENDCLASS = QtMocHelpers::stringData(
     "AudioPlayer",
     "PlaybackFinished",
-    ""
+    "",
+    "songChanged"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -50,17 +51,19 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSAudioPlayerENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x06,    1 /* Public */,
+       1,    0,   26,    2, 0x06,    1 /* Public */,
+       3,    0,   27,    2, 0x06,    2 /* Public */,
 
  // signals: parameters
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -76,6 +79,8 @@ Q_CONSTINIT const QMetaObject AudioPlayer::staticMetaObject = { {
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<AudioPlayer, std::true_type>,
         // method 'PlaybackFinished'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'songChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -88,6 +93,7 @@ void AudioPlayer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         (void)_t;
         switch (_id) {
         case 0: _t->PlaybackFinished(); break;
+        case 1: _t->songChanged(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -96,6 +102,13 @@ void AudioPlayer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             using _t = void (AudioPlayer::*)();
             if (_t _q_method = &AudioPlayer::PlaybackFinished; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (AudioPlayer::*)();
+            if (_t _q_method = &AudioPlayer::songChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
                 return;
             }
         }
@@ -122,13 +135,13 @@ int AudioPlayer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
@@ -137,5 +150,11 @@ int AudioPlayer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void AudioPlayer::PlaybackFinished()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void AudioPlayer::songChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

@@ -10,6 +10,7 @@
 #include "PlayerControls.h"
 #include <QPixmap>
 #include <QProcess>
+#include <QLabel>
 
 class MainWindow : public QWidget {
 
@@ -24,12 +25,17 @@ protected:
 
 public:
     QPixmap songImage;
+    QLabel *songTitleLabel;
+    QLabel *artistLabel;
+    QString currentSongTitle;
+    QString currentArtist;
     MainWindow(); //Constructor for the class
     void Menus(); // methods for the class
     void Toolbars();
     void StatusBar();
     void loadSongs(const QString &directoryPath);
     void loadAlbumArt();
+    void loadMetadata();
 };
 
 
