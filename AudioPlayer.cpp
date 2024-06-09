@@ -4,6 +4,7 @@
 #include "mpg123.h"
 #include <iostream>
 #include <filesystem>
+#include <QTimer>
 
 AudioPlayer::AudioPlayer(QObject *parent)
         : QObject(parent), stream(nullptr), sndFile(nullptr), m_mpg123_handle(nullptr), buffer(nullptr),
@@ -20,6 +21,8 @@ AudioPlayer::AudioPlayer(QObject *parent)
 
     // Load songs from the specified directory
     LoadSongsFromDirectory("/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/Songs");
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &AudioPlayer::updateElapsedTime);
 }
 
 AudioPlayer::~AudioPlayer() {
@@ -91,6 +94,16 @@ void AudioPlayer::PlaySound() {
         return;
     }
     isPlaying = true;
+    totalDurationInSeconds = sfInfo.frames / sfInfo.samplerate;
+    elapsedTimeInSeconds = 0;
+    timer->start(1000); // Update every second
+}
+
+void AudioPlayer::updateElapsedTime() {
+    if (isPlaying) {
+        elapsedTimeInSeconds++;
+        emit timeUpdated(elapsedTimeInSeconds, totalDurationInSeconds - elapsedTimeInSeconds);
+    }
 }
 
 void AudioPlayer::PauseSound() {
@@ -102,6 +115,7 @@ void AudioPlayer::PauseSound() {
             isPlaying = false;
         }
     }
+    timer->stop();
 }
 
 void AudioPlayer::ResumeSound() {
@@ -113,6 +127,7 @@ void AudioPlayer::ResumeSound() {
             isPlaying = true;
         }
     }
+    timer->stop();
 }
 
 void AudioPlayer::StopSound() {
@@ -130,6 +145,8 @@ void AudioPlayer::StopSound() {
         stream = nullptr;
         isPlaying = false;
     }
+    timer->stop();
+    elapsedTimeInSeconds = 0;
 }
 
 void AudioPlayer::ManageBuffer() {

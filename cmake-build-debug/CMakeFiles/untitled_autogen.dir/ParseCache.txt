@@ -1847,6 +1847,7 @@
  mdp:/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QObject
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QProcess
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QTimer
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h
@@ -1860,6 +1861,7 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic_cxx11.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearray.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h
@@ -1950,6 +1952,7 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtdeprecationmarkers.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtextstream.h
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtimer.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtnoop.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h
@@ -2856,6 +2859,7 @@
  mdp:/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/cmake-build-debug/untitled_autogen/moc_predefs.h
  mdp:/Users/user/Dropbox/Mac/Desktop/Projects/C++/PersonalProj/musicPlayer/portaudio/include/portaudio.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QObject
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/QTimer
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20functional.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20memory.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/q20type_traits.h
@@ -2868,6 +2872,7 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qatomic_cxx11.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasicatomic.h
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbasictimer.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbindingstorage.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearray.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qbytearrayalgorithms.h
@@ -2940,6 +2945,7 @@
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtcoreexports.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtdeprecationmarkers.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h
+ mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtimer.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtnoop.h
  mdp:/Users/user/Qt/6.7.0/macos/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h

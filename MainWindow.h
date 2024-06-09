@@ -31,6 +31,8 @@ public:
     QLabel *artistLabel;
     QString currentSongTitle;
     QString currentArtist;
+    QLabel *startLabel;
+    QLabel *endLabel;
     MainWindow(); //Constructor for the class
     void Menus(); // methods for the class
     void Toolbars();
@@ -38,6 +40,7 @@ public:
     void loadSongs(const QString &directoryPath);
     void loadAlbumArt();
     void loadMetadata();
+    void updateTimeLabels(int elapsedTime, int remainingTime);
 };
 
 

@@ -7,6 +7,7 @@
 #include "mpg123.h"
 #include <string>
 #include <vector>
+#include <QTimer>
 
 class AudioPlayer : public QObject {
 Q_OBJECT
@@ -14,6 +15,7 @@ Q_OBJECT
 public:
     explicit AudioPlayer(QObject *parent = nullptr);
     ~AudioPlayer();
+    void updateElapsedTime();
     void setVolume(int volume);
     void LoadSongsFromDirectory(const std::string &directoryPath);
     void OpenFiles(const std::string &filePath);
@@ -25,9 +27,11 @@ public:
     void RewindSong();
     void ManageBuffer();
     QString getCurrentSongPath() const;  // To get the path of the current playing song
-
+    int elapsedTimeInSeconds;
+    int totalDurationInSeconds;
 
 private:
+    QTimer *timer;
     float volumeLevel;
     PaStream *stream;
     SNDFILE *sndFile;
@@ -46,5 +50,6 @@ private:
 signals:
     void PlaybackFinished();
     void songChanged();
+    void timeUpdated(int elapsedTime, int remainingTime);
 };
 #endif // UNTITLED_AUDIOPLAYER_H

@@ -59,6 +59,18 @@ MainWindow::MainWindow() {
     connect(playerControls, &PlayerControls::PreviousRequested, audioPlayer, &AudioPlayer::RewindSong);
     connect(audioPlayer, &AudioPlayer::songChanged, this, &MainWindow::loadMetadata);
     connect(volumeSlider, &QSlider::valueChanged, audioPlayer, &AudioPlayer::setVolume);
+    connect(audioPlayer, &AudioPlayer::timeUpdated, this, &MainWindow::updateTimeLabels);
+
+}
+
+void MainWindow::updateTimeLabels(int elapsedTime, int remainingTime) {
+    QTime elapsedQTime(0,0);
+    elapsedQTime = elapsedQTime.addSecs(elapsedTime);
+    QTime remainingQTime(0,0);
+    remainingQTime = remainingQTime.addSecs(remainingTime);
+
+    startLabel->setText(elapsedQTime.toString("mm:ss"));
+    endLabel->setText(remainingQTime.toString("mm:ss"));
 }
 
 void MainWindow::loadAlbumArt() {
@@ -292,8 +304,8 @@ void MainWindow::StatusBar() {
 
 
     // Labels for the start and end times
-    QLabel *startLabel = new QLabel("0:00", this);
-    QLabel *endLabel = new QLabel("4:30", this);
+    startLabel = new QLabel(this);
+    endLabel = new QLabel(this);
 
     startLabel->setGeometry(470, 150, 40, 20); // Adjust position to line up with the start of the slider
     endLabel->setGeometry(715, 150, 40, 20); // Adjust position to line up with the end of the slider
