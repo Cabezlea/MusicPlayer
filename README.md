@@ -21,12 +21,16 @@ Here is a screenshot of the Music Player application:
 
 ![image](https://github.com/Cabezlea/MusicPlayer/blob/main/Images/ForReadMe.png)
 
+
 ## File Structure
 
-- **MainWindow.cpp**: Contains the main interface and logic for the player.
-- **Player.cpp**: Handles the core functionality of playing and pausing music.
-- **Metadata.cpp**: Manages the extraction and display of song metadata.
-- **Resources/**: Directory containing image assets and other resources.
+- **MainWindow.cpp**: Contains the main interface and logic for the player. This is the file that contains most of the functionality of the program, such as using QT for the User Interface, manages controls, and the audiofiles.
+
+- **AudioPlayer.cpp**: Handles the core functionality of each button such as skip or rewind, works with the other libraries such as portaudio.
+  
+- **PlayerControls.cpp**: Manages the logic of each button, such as pause or resume.
+  
+- **Images/**: Directory containing image assets and other resources.
 
 ## Contribution
 
