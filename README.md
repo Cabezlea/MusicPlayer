@@ -17,10 +17,9 @@ This project is a simple music player application developed in C++ using the Qt 
 
 ## Screenshots
 
-Here are some screenshots of the Music Player application:
+Here is a screenshot of the Music Player application:
 
-https://github.com/Cabezlea/MusicPlayer/blob/main/Images/ForReadMe.png
-*Figure 1: Main interface of the Music Player showing album art and song details.*
+![image](https://github.com/Cabezlea/MusicPlayer/blob/main/Images/ForReadMe.png)
 
 ## File Structure
 
